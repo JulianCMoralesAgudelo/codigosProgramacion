@@ -1,0 +1,1080 @@
+
+Fundamentos De La Computacion
+Para conocer los fundamentos tanto su transformación histórica como sus funcionamientos antes debemos respondernos la pregunta ¿QUÉ ES LA COMPUTACIÓN?
+
+domingo, 8 de junio de 2014
+EJEMPLOS DE ALGORITMOS CON PSEINT
+En esta sección puede observar ejemplos de pseudocódigos válidos en PSeInt, así como también sus correspondientes diagramas de flujo (en cualquiera de las tres formas soportadas). Recuerde que el lenguaje de PSeInt puede adaptarse a diferentes perfiles. A modo de ejemplo se incluyen los algoritmos para dos perfiles diferentes, uno con reglas flexibles, y otro con reglas estrictas.
+
+Suma: Este es el ejemplo más simple. Muestra cómo cargar dos números de dos variables, calcular la suma de los mismos y mostrarla en pantalla
+
+// este es el ejemplo más simple de esta ayuda, 
+// toma dos numeros, los suma y muestra el resultado
+
+Proceso Suma
+
+
+    // para cargar un dato, se le muestra un mensaje al usuario
+    // con la instrucción Escribir, y luego se lee el dato en 
+    // una variable (A para el primero, B para el segundo) con 
+    // la instrucción Leer
+
+    Escribir "Ingrese el primer numero:"
+    Leer A
+
+    Escribir "Ingrese el segundo numero:"
+    Leer B
+
+
+    // ahora se calcula la suma y se guarda el resultado en la
+    // variable C mediante la asignación (<-)
+    
+    C <- A+B
+
+
+    // finalmente, se muestra el resultado, precedido de un 
+    // mensaje para avisar al usuario, todo en una sola
+    // instrucción Escribir
+    
+    Escribir "El resultado es: ",C
+
+FinProceso
+
+Mayores: Busca los dos mayores de una lista de N datos
+
+// Busca los dos mayores de una lista de N datos
+
+Proceso Mayores
+
+    // primero se declara un arreglo de 200 elementos
+    Dimension datos[200]
+    
+    // luego se pide al usuario ingresar la cantidad de datos, 
+    // que no debera ser mayor a 200
+    Escribir "Ingrese la cantidad de datos (de 2 a 200):"
+    Leer n
+    
+    // se leen uno por uno los 200 datos y se los guarda en el arreglo
+    Para i<-1 Hasta n Hacer
+        Escribir "Ingrese el dato ",i,":"
+        Leer datos[i]
+    FinPara
+
+    // se comparan los dos primeros y se toman como may1 (el mayor de los
+    // dos) y may2 (el segundo mayor).
+    Si datos[1]>datos[2] Entonces
+        may1<-datos[1]
+        may2<-datos[2]
+    Sino
+        may1<-datos[2]
+        may2<-datos[1]
+    FinSi
+    // se recorren los demas elementos buscan si hay alguno mayor que may1 o may2
+    Para i<-3 Hasta n Hacer
+        Si datos[i]>may1 Entonces // si hay un valor mayor que may1
+            may2<-may1 // como may1 era el más grande, pasa a estar en segundo lugar
+            may1<-datos[i] // y el nuevo dato toma el primer puesto (mayor de todos)
+        Sino // si no era mas grande que may1, todavia puede ser mas grande que may2
+            Si datos[i]>may2 Entonces // si supera al segundo mayor que teniamos
+                may2<-datos[i] // se lo guarda como segundo mayor
+            FinSi
+        FinSi
+    FinPara
+    
+    // se muestran los resultados
+    Escribir "El mayor es: ",may1
+    Escribir "El segundo mayor es: ",may2
+    
+FinProceso
+
+Coloquial: En este ejemplo se muestran algunas de las variantes que se pueden utilizar con el perfil de lenguaje Flexible para que el pseudocódigo se asemeje más al lenguaje coloquial
+// Este ejemplo muestra algunas de las variaciones posibles cuando se utiliza
+// syntaxis flexible, instrucciones adicionales, y expresiones en lenguaje
+// coloquial para las condiciones.
+
+Proceso sin_titulo
+    
+    Definir a, b Como Entero
+    
+    Imprimir "Ingrese 3 numeros (los dos primeros deben ser enteros):"
+    Leer a b c
+    
+    Si a Es Mayor Que b Y a Es Mayor Que c Entonces
+        Escribir a " es el mayor"
+    sino 
+        Si b Es Mayor Que c Entonces
+            Escribir b " es el mayor"
+        Sino
+            Escribir c " es el mayor"
+        FinSi
+    FinSi
+
+    
+    Mostrar "Pulse una tecla para continuar"
+    Esperar Tecla
+    Limpiar Pantalla
+    
+    Si a Es Par
+        Escribir a " es par"
+    Sino
+        Escribir a " es impar"
+    FinSi
+    
+    Escribir Sin Bajar "Los divisores de " b " son: "
+    Para i Desde 1 Hasta b-1
+        Si b Es Multiplo De i
+            Escribir sin bajar i " "
+        Fin Si
+    Fin Para
+    Escribir b
+    
+    Si c Es Entero 
+        Mostrar C " es entero"
+    Sino
+        Mostrar C " es real"
+    FinSi
+    
+FinProceso
+
+
+
+
+
+Subprocesos: Ejemplo básico que ilustra la sintaxis para declarar e invocar nuevas funciones en pseudocódigo
+
+
+
+
+// funcion que no recibe ni devuelve nada
+SubProceso Saludar
+    Escribir "Hola mundo!"
+FinSubProceso
+
+// funcion que recibe un argumento por valor, y devuelve su doble
+SubProceso res <- CalcularDoble(num) 
+    res <- num*2 // retorna el doble
+FinSubProceso
+
+// funcion que recibe un argumento por referencia, y lo modifica
+SubProceso Triplicar(num por referencia) 
+    num <- num*3 // modifica la variable duplicando su valor
+FinSubProceso
+
+// proceso principal, que invoca a las funciones antes declaradas
+Proceso PruebaFunciones
+    
+    
+    Escribir "Llamada a la funcion Saludar:"
+    Saludar // como no recibe argumentos pueden omitirse los paréntesis vacios
+    
+    Escribir "Ingrese un valor numérico para x:"
+    Leer x
+    
+    Escribir "Llamada a la función CalcularDoble (pasaje por valor)"
+    Escribir "El doble de ",x," es ", CalcularDoble(x)
+    Escribir "El valor original de x es ",x
+    
+    Escribir "Llamada a la función Triplicar (pasaje por referencia)"
+    Triplicar(x)
+    Escribir "El nuevo valor de x es ", x
+    
+FinProceso
+
+
+
+AdivinaNumero: Sencillo juego en el que el usuario debe adivinar un número aleatorio
+
+
+// Juego simple que pide al usuario que adivine un numero en 10 intentos
+
+Proceso Adivina_Numero
+
+    intentos<-10
+    num_secreto <- azar(100)+1
+    
+    Escribir "Adivine el numero (de 1 a 100):"
+    Leer num_ingresado
+    Mientras num_secreto<>num_ingresado Y intentos>1 Hacer
+        Si num_secreto>num_ingresado Entonces
+            Escribir "Muy bajo"
+        Sino 
+            Escribir "Muy alto"
+        FinSi
+        intentos <- intentos-1
+        Escribir "Le quedan ",intentos," intentos:"
+        Leer num_ingresado
+    FinMientras
+    
+    Si num_secreto=num_ingresado Entonces
+        Escribir "Exacto! Usted adivino en ",11-intentos," intentos."
+    Sino
+        Escribir "El numero era: ",num_secreto
+    FinSi
+    
+FinProceso
+
+
+
+
+
+Promedio: Ejemplo básico de uso de un acumulador y la estructura de control PARA para calcular el promedio de un conjunto de valores
+
+
+
+
+// Calcula el promedio de una lista de N datos
+
+Proceso Promedio
+
+    Escribir "Ingrese la cantidad de datos:"
+    Leer n
+    
+    acum<-0
+    
+    Para i<-1 Hasta n Hacer
+        Escribir "Ingrese el dato ",i,":"
+        Leer dato
+        acum<-acum+dato
+    FinPara
+    
+    prom<-acum/n
+    
+    Escribir "El promedio es: ",prom
+    
+FinProceso
+
+
+
+Triangulo: Este algoritmo determina a partir de las longitudes de tres lados de un triángulo si corresponden a un triángulo rectángulo (para utiliza la relación de Pitágoras, tomando los dos lados de menor longitud como catetos), y en caso afirmativo informa el área del mismo                                                                                                                                                                                                                                                                                                   // Lee los tres lados de un triangulo rectangulo, determina 
+// si corresponden (por Pitargoras) y en caso afirmativo 
+// calcula el area
+
+Proceso TrianguloRectangulo
+    
+
+    // cargar datos
+    Escribir "Ingrese el lado 1:"
+    Leer l1
+    Escribir "Ingrese el lado 2:"
+    Leer l2
+    Escribir "Ingrese el lado 3:"
+    Leer l3
+    
+    // encontrar la hipotenusa (mayor lado)
+    Si l1>l2 Entonces
+        cat1<-l2
+        Si l1>l3 Entonces
+            hip<-l1
+            cat2<-l3
+        Sino
+            hip<-l3
+            cat2<-l1
+        FinSi
+    Sino
+        cat1<-l1
+        Si l2>l3 Entonces
+            hip<-l2
+            cat2<-l3
+        Sino
+            hip<-l3
+            cat2<-l2
+        FinSi
+    FinSi
+    
+    // ver si cumple con Pitagoras
+    Si hip^2 = cat1^2 + cat2^2 Entonces
+        // calcualar area
+        area<-(cat1*cat2)/2
+        Escribir "El area es: ",area
+    Sino
+        Escribir "No es un triangulo rectangulo."
+    FinSi
+    
+FinProceso                                                                                                                  OrdenaLista: Este ejemplo almacena una lista de nombres en un arreglo y luego los ordena alfabéticamente. El método de ordenamiento es relativamente simple. Para la entrada de datos se utiliza una estructura MIENTRAS, sin saber a priori la cantidad de datos que se ingresarán                                                                                                                                                                                                                                                                         // Se ingresa una lista de nombres (la lista termina
+// cuando se ingresa un nombre en blanco) no permitiendo
+// ingresar repetidos y luego se ordena y muestra
+
+Proceso OrdenaLista
+    
+    Dimension lista[200]
+    
+    Escribir "Ingrese los nombres (enter en blanco para terminar):"
+    
+    // leer la lista
+    cant<-0
+    Leer nombre
+    Mientras nombre<>"" Hacer
+        cant<-cant+1
+        lista[cant]<-nombre
+        Repetir // leer un nombre y ver que no este ya en la lista
+            Leer nombre
+            se_repite<-Falso
+            Para i<-1 Hasta cant Hacer
+                Si nombre=lista[i] Entonces
+                    se_repite<-Verdadero
+                FinSi
+            FinPara
+        Hasta Que NO se_repite
+    FinMientras
+    
+    // ordenar
+    Para i<-1 Hasta cant-1 Hacer
+        // busca el menor entre i y cant
+        pos_menor<-i
+        Para j<-i+1 Hasta cant Hacer
+            Si lista[j]<lista[pos_menor] Entonces
+                pos_menor<-j
+            FinSi
+        FinPara
+        // intercambia el que estaba en i con el menor que encontro
+        aux<-lista[i]
+        lista[i]<-lista[pos_menor]
+        lista[pos_menor]<-aux
+    FinPara    
+    
+    // mostrar como queda la lista
+    Escribir "La lista ordenada es:"
+    Para i<-1 Hasta cant Hacer
+        Escribir "   ",lista[i]
+    FinPara
+    
+FinProceso
+
+
+Modulo: Ejemplo trivial del uso del operador de módulo (MOD o %)
+
+
+
+
+Proceso Modulo
+    Escribir "Ingrese el numero: "
+    Leer N
+    Escribir "Ingrese el divisor: "
+    Leer M
+    Si N MOD M = 0 Entonces
+        Escribir M," es divisor exacto de ",N,"."
+    Sino
+        Escribir "El resto de dividir ",N," por ",M," es: ",N MOD M
+    FinSi
+FinProceso
+
+
+
+Menu: Ejemplo simple de menú de opciones, con las estructuras Repetir-Hasta Que y Segun
+
+
+// Muestra como hacer un menú simple con las estructuras Repetir-Hasta Que y Según
+
+Proceso sin_titulo
+    Repetir
+        // mostrar menu
+        Limpiar Pantalla
+        Escribir "Menú de recomendaciones"
+        Escribir "   1. Literatura"
+        Escribir "   2. Cine"
+        Escribir "   3. Música"
+        Escribir "   4. Videojuegos"
+        Escribir "   5. Salir"
+        // ingresar una opcion
+        Escribir "Elija una opción (1-5): "
+        Leer OP
+        // procesar esa opción
+        Segun OP Hacer
+            1:
+                Escribir "Lecturas recomendables:"
+                Escribir " + Esperándolo a Tito y otros cuentos de fúbol (Eduardo Sacheri)"
+                Escribir " + El juego de Ender (Orson Scott Card)"
+                Escribir " + El sueño de los héroes (Adolfo Bioy Casares)"
+            2:
+                Escribir "Películas recomendables:"
+                Escribir " + Matrix (1999)"
+                Escribir " + El último samuray (2003)"
+                Escribir " + Cars (2006)"
+            3:
+                Escribir "Discos recomendables:"
+                Escribir " + Despedazado por mil partes (La Renga, 1996)"
+                Escribir " + Búfalo (La Mississippi, 2008)"
+                Escribir " + Gaia (Mägo de Oz, 2003)"
+            4:
+                Escribir "Videojuegos clásicos recomendables"
+                Escribir " + Día del tentáculo (LucasArts, 1993)"
+                Escribir " + Terminal Velocity (Terminal Reality/3D Realms, 1995)"
+                Escribir " + Death Rally (Remedy/Apogee, 1996)"
+            5:
+                Escribir "Gracias, vuelva prontos"
+            De otro modo:
+                Escribir "Opción no válida"
+        FinSegun
+        Escribir "Presione enter para continuar"
+        Esperar Tecla
+    Hasta Que OP=5
+FinProceso
+
+
+
+
+
+Digitos: Separa los dígitos de un número entero utilizando el operador módulo
+
+
+
+
+// Separa un numero entero en sus digitos
+
+Proceso Digitos
+    
+    Escribir "Ingrese un numero entero postivo:"
+    Leer n
+    
+    // primero, contar cuantos digitos
+    cont <- 0 
+    aux <- n
+    Mientras aux>0 hacer // mientras no sea cero
+        cont <- cont + 1 // contar cuantos digitos
+        aux <- trunc(aux/10) // dividir por 10 y despreciar los de
+    FinMientras
+    Escribir "El numero tiene ",cont," digitos"
+    
+    // luego, mostrarlos uno por uno 
+    aux<-n
+    Para i<-1 hasta cont Hacer
+        pot <- 10^(cont-i) // por cuanto hay que dividir para obtener el primer digito
+        digito <- trunc (aux / pot) // obtener el digito
+        aux <- aux - digito*pot // quitar ese digito al numero
+        Escribir "El digito ",i," es ",digito
+    FinPara
+    
+FinProceso
+
+
+
+Resolvente: Utiliza la fórmula resolvente para determinar las raíces de una ecuación de segundo grado a partir de sus tres coeficientes, y las informa adecuadamente según su tipo (reales iguales, reales distintas, imaginarias)
+
+
+// calcula las raices de una ecuacion de segundo grado
+
+Proceso Resolvente
+    
+    // cargar datos
+    Escribir "Ingrese el coeficiente A:"
+    Leer a
+    Escribir "Ingrese el coeficiente B:"
+    Leer b
+    Escribir "Ingrese el coeficiente C:"
+    Leer c
+    
+    // determinar si son reales o imaginarias
+    disc <- b^2-4*a*c
+    Si disc<0 Entonces
+        // si son imaginarias
+        preal<- (-b)/(2*a)
+        pimag<- rc(-disc)/(2*a)
+        Escribir "Raiz 1: ",preal,"+",pimag,"i"
+        Escribir "Raiz 2: ",preal,"-",pimag,"i"
+    Sino
+        Si disc=0 Entonces // ver si son iguales o distintas
+            r <- (-b)/(2*a)
+            Escribir "Raiz 1 = Raiz 2: ",r
+        Sino
+            r1 <- ((-b)+rc(disc))/(2*a)
+            r2 <- ((-b)-rc(disc))/(2*a)
+            Escribir "Raiz 1: ",r1
+            Escribir "Raiz 2: ",r2
+        FinSi
+    FinSi
+    
+FinProceso
+
+
+
+
+
+Primos: Calcula iterativamente los N primeros números primos
+
+
+
+
+// Encuentra los primeros N numeros primos
+
+Proceso Primos
+    
+    Escribir "Ingrese la cantidad de numeros primos a mostrar:"
+    Leer cant_a_mostrar
+    
+    Escribir "1: 2" // el primer primo es 2, los otros son todos impares...
+    cant_mostrados <- 1
+    n<-3            // ...a partir de 3
+    
+    Mientras cant_mostrados<cant_a_mostrar Hacer
+        
+        es_primo <- Verdadero // pienso que es primo hasta que encuentre con que dividirlo
+        
+        Para i<-3 hasta rc(n) con paso 2 Hacer // ya sabemos que es impar
+            Si n MOD i = 0 entonces // si la division da exacta...
+                es_primo <- Falso  // ...ya no es primo
+            FinSi
+        FinPara
+        
+        Si es_primo Entonces
+            cant_mostrados <- cant_mostrados + 1
+            Escribir cant_mostrados, ": ",n
+        FinSi
+        
+        n <- n + 2 
+        
+    FinMientras
+    
+FinProceso
+
+
+
+Factorizacion: Ejemplo de algoritmo para descomponer un número en sus factores primos
+
+
+Proceso Factorizacion
+    
+    Escribir "Ingrese el numero: "
+    Leer num
+    
+    Escribir "Factorizacion: "
+    
+    factorizar<-verdadero
+    
+    Mientras factorizar Y num>1 hacer
+        div<-0
+        Si num/2 = trunc(num/2) Entonces
+            Escribir 2
+            num<-num/2
+        Sino
+            div<-1; factor_primo<-Verdadero
+            Mientras div<=rc(num) Y factor_primo Hacer
+                div <- div+2
+                Si num/div = trunc(num/div) Entonces
+                    factor_primo <- Falso
+                FinSi
+            FinMientras
+            Si factor_primo Entonces
+                escribir num
+                factorizar<-falso
+            sino
+                escribir div
+                num<-num/div
+                factor_primo<-verdadero
+            FinSi
+        FinSi
+    FinMientras
+    
+FinProceso
+
+
+
+
+
+Cadenas: Muestra la utilización de las funciones de cadenas para contar las vocales de una frase
+
+
+
+
+// Este ejemplo muestra como utilizar las funciones para manejo 
+// de cadenas de caracteres. Requiere que el perfil de lenguaje
+// habilite estas funciones. Si al intentar ejecutar obtiene
+// errores en las funciones, revise su configuración en el
+// item "Opciones del lenguaje" del menú "Configurar".
+Proceso sin_titulo
+    
+    
+    // el usuario ingresa una frase, vamos a contar cuantas vocales tiene
+    Escribir "Ingrese una frase"
+    Leer frase
+    // pasamos toda la frase a minusculas para no tener que preguntar 2 veces por cada vocal
+    frase<-Minusculas(frase)
+    
+    // lista de letras que vamos a buscar
+    Vocales<-"aeiouáéíóúü"
+    cantvocales<-0
+    
+    // comparar todas las letras de frase con las de vocales y contar coincidencias
+    Para i<-1 hasta Longitud(frase) Hacer
+        Para j<-1 hasta Longitud(vocales) Hacer
+            Si Subcadena(frase,i,i)=Subcadena(vocales,j,j) Entonces
+                cantVocales<-cantVocales+1
+            FinSi
+        FinPara
+    FinPara
+    
+    Escribir "La frase contiene ",cantVocales," vocales."
+    
+    
+FinProceso
+
+
+
+Para: En este ejemplo se recorre un arreglo utilizando las tres variantes de la estructura Para
+
+
+// Para poder ejecutar correctamente este ejemplo debe tener
+// habilitada la sintaxis flexible en su perfil de lenguaje
+
+Proceso sin_titulo    
+
+
+    // declara un arreglo de 10 elementos
+    Dimension A[10]
+    
+    // recorre los 10 elementos y va asignandoles enteros aleatorios
+    para cada elemento de A Hacer
+        // elemento toma el contenido de cada posicion del arreglo
+        // y si se modifica elemento se modifica el arreglo
+        elemento <- azar(100)
+    FinPara
+    
+    Escribir "Los elementos del arreglo son:"
+    // recorre los 10 elementos utilizando subindices y los muestra en pantalla
+    para i desde 1 hasta 10 Hacer
+        escribir "Posición " i ": " A[i]
+    FinPara
+    
+    Escribir "" // deja una linea en blanco
+    
+    Escribir "En orden inverso:"
+    // recorre los 10 elementos en orden inverso y los muestra en una misma linea
+    para i desde 10 hasta 1 Hacer
+        escribir sin bajar A[i] " "
+    FinPara
+    
+FinProceso
+
+
+
+
+
+Potencia: Ejemplo de una función recursiva para calcular una potencia
+
+
+
+
+// Implementación del cálculo de una potencia mediante una función recursiva
+// El paso recursivo se basa en que A^B = B*(A^(B-1))
+// El paso base se base en que A^0 = 1
+
+SubProceso  resultado <- Potencia (base, exponente)
+    Si exponente=0 Entonces
+        resultado <- 1;
+    sino 
+        resultado <- base*Potencia(base,exponente-1); 
+    FinSi
+FinSubProceso
+
+Proceso DosALaDiezRecursivo
+    Escribir "Ingrese Base"
+    Leer base
+    Escribir "Ingrese Exponente"
+    Leer exponente
+    Escribir "El resultado es ",Potencia(base,exponente)
+FinProceso
+
+
+
+
+
+Promedio2: Ejemplo de cómo crear subprocesos que reciban arreglos como argumento
+
+
+
+
+// Calcula el promedio de una lista de N datos utilizando un SubProceso
+
+SubProceso prom <- Promedio ( arreglo, cantidad )
+    suma <- 0
+    Para i<-1 Hasta cantidad Hacer
+        suma <- suma + arreglo[i]
+    FinPara
+    prom <- suma/cantidad
+FinSubProceso
+
+Proceso Principal
+
+    Dimension datos[100]
+    Escribir "Ingrese la cantidad de datos:"
+    Leer n
+    
+    Para i<-1 Hasta n Hacer
+        Escribir "Ingrese el dato ",i,":"
+        Leer datos[i]
+    FinPara
+    
+    Escribir "El promedio es: ",Promedio(datos,n)
+    
+FinProceso
+
+
+
+
+
+Misil: Ejemplo de animación con códigos ASCII y la instrucción Esperar
+
+
+
+
+Proceso Misil
+
+    Escribir "Presione una tecla para iniciar el lanzamiento!"
+    Esperar Tecla
+    
+    
+    // el arreglo cohete tiene el dibujo del cohete como lineas de texto
+    dimension cohete[9]
+    cohete[1]<-"   /|\   "
+    cohete[2]<-"   |B|   "
+    cohete[3]<-"   |O|   "
+    cohete[4]<-"   |M|   "
+    cohete[5]<-"   |B|   "
+    cohete[6]<-"  //|\\  "
+    cohete[7]<-" ******* "
+    cohete[8]<-"* * * * *"
+    cohete[9]<-" * * * * "
+    
+    // primero se muestra la primer parte del dibujo y la cuenta regresiva
+    Para i<-1 hasta 11 Hacer
+        Borrar Pantalla
+        Para j<-1 hasta 15 Hacer
+            Escribir ""
+        FinPara
+        Para j<-1 hasta 6 Hacer
+            Escribir cohete[j]
+        FinPara
+        Escribir ""
+        Escribir "Lanzamiento en ",11-i
+        Esperar 1 Segundo
+    FinPara
+    
+    // despues se muestra el dibujo completo y cada vez mas arriba
+    Para i<-1 hasta 15 Hacer
+        Borrar Pantalla
+        Para j<-i hasta 15 Hacer
+            Escribir ""
+        FinPara
+        Para j<-1 hasta 8 Hacer
+            Escribir cohete[j]
+        FinPara
+        si i>1 Entonces
+            Escribir " * * * * "
+        finsi
+        Esperar 1/i Segundo
+    FinPara
+    
+    // finalmente se va modificando el dibujo para hacer la explosion
+    // estado tiene un entero que dice en que parte de la explosion va cada linea del dibujo
+    Dimension estado[6]
+    estado[1]<-3; estado[2]<-2; estado[3]<-1
+    estado[4]<-2; estado[5]<-3; estado[6]<-4
+    Para i<-1 hasta 10 Hacer
+        Borrar Pantalla
+        Para j<-1 hasta 6 Hacer
+            Estado[j]<-Estado[j]-1
+            segun Estado[j] Hacer
+                0:  cohete[j]<-"    +    "
+                -1,-5: cohete[j]<-"   +X+   "
+                -2,-4: cohete[j]<-"  +XXX+  "
+                -3: cohete[j]<-" +XXXXX+ "
+                -6: cohete[j]<-"         "
+            FinSegun
+            Escribir cohete[j]
+        FinPara
+        
+        Esperar .2 Segundos
+    FinPara
+    
+FinProceso
+
+
+
+Romanos: Muestra como convertir números enteros a notación romana utilizando arreglos
+
+
+
+Proceso Romanos
+    
+    // leer el número
+    Escribir "Ingrese un número entre 1 y 1000"
+    Leer Numero
+    
+    // controlar que sea válido para convertir
+    SePuedeConvertir<-Verdadero
+    Si Numero=0 Entonces
+        Escribir "No existe ningún símbolo para representar el 0"
+        SePuedeConvertir<-Falso
+    FinSi
+    Si Numero<>trunc(numero) Entonces
+        Escribir "El número debe ser entero"
+        SePuedeConvertir<-Falso
+    FinSi
+    Si Numero>1000 Entonces
+        Escribir "Muy alto"
+        SePuedeConvertir<-Falso
+    FinSi
+    Si Numero<0 Entonces
+        Escribir "Debe ser positivo"
+        SePuedeConvertir<-Falso
+    FinSi
+    
+    // realizar la conversión
+    Si SePuedeConvertir Entonces        
+        Si Numero=1000 Entonces
+            Escribir "M"
+        Sino
+            Dimension nu[10], nd[10], nc[10] // notación para unidades, decenas y centenas
+            nu[1]<-''; nu[2]<-'I'; nu[3]<-'II'; nu[4]<-'III'; nu[5]<-'IV'; nu[6]<-'V'; nu[7]<-'VI'; nu[8]<-'VII'; nu[9]<-'VIII'; nu[10]<-'IX'
+            nd[1]<-''; nd[2]<-'X'; nd[3]<-'XX'; nd[4]<-'XXX'; nd[5]<-'XL'; nd[6]<-'L'; nd[7]<-'LX'; nd[8]<-'LXX'; nd[9]<-'LXXX'; nd[10]<-'XC'
+            nc[1]<-''; nc[2]<-'C'; nc[3]<-'CC'; nc[4]<-'CCC'; nc[5]<-'CD'; nc[6]<-'D'; nc[7]<-'DC'; nc[8]<-'DCC'; nc[9]<-'DCCC'; nc[10]<-'CM'
+            centenas<-trunc(Numero/100) MOD 10
+            decenas<-trunc(Numero/10) MOD 10
+            unidades<-Numero MOD 10
+            Escribir nc[centenas+1],nd[decenas+1],nu[unidades+1]
+        FinSi
+    FinSi
+    
+FinProceso
+
+
+
+
+
+Hanoi: Implementa el conocido juego de las torres de Hanoi en pseudocódigo
+
+
+
+
+//    El objetivo del juego es mover los discos de la torre 1 a la 3 en la
+// menor cantidad de movimientos posible. No se puede colocar un disco de 
+// un tamanio sobre otro mas chico
+
+//     Hay una matriz que representa las torres, cada columna contiene
+//  nros que representan los tamanios de los discos en esas torres (solo
+//  interesan los valores hasta la cantidad de discos de esa torre).
+//  Cuantos discos tiene cada torre lo dice el vector cant_discos. 
+
+Proceso Hanoi
+    
+    Dimension torres[3,10], cant_discos[3]
+    
+    // pedir y validar cuantos discos colocar en la primer torre
+    Escribir "Ingrese el nro de discos (1-8):"
+    leer discos
+    mientras discos<1 O discos>8 Hacer
+        Escribir "El numero de discos debe ser mayor a 0 y menor a 5:"
+        leer discos
+    finmientras
+
+    // inicializar los datos
+    cant_discos[1]<-discos
+    cant_discos[2]<-0
+    cant_discos[3]<-0
+    Para i<-1 Hasta discos hacer
+        torres[1,i]<-discos-i+1
+    FinPara
+    
+    
+    // jugar!
+    cant_movs<-0
+    Mientras cant_discos[3]<>discos Hacer // mientras no esten todos los discos en la tercer torre, el juego sigue
+        
+        Limpiar Pantalla
+        
+        Para i<-1 Hasta 3 Hacer // dibujar las tres torres
+            escribir "Torre ",i
+            si cant_discos[i]=0 Entonces
+                Escribir ""
+            sino
+                para j<-cant_discos[i] hasta 1 con paso -1 Hacer // recorrer los discos de la torre, de arriba hacia abajo
+                    segun torres[i,j] Hacer // dibujar cada disco
+                        1: Escribir "                   XX"
+                        2: Escribir "                 XXXXXX"
+                        3: Escribir "               XXXXXXXXXX"
+                        4: Escribir "             XXXXXXXXXXXXXX"
+                        5: Escribir "           XXXXXXXXXXXXXXXXXX"
+                        6: Escribir "         XXXXXXXXXXXXXXXXXXXXXX"
+                        7: Escribir "       XXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        8: Escribir "     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                    finsegun
+                FinPara
+            finsi
+            Escribir "   ----------------------------------"
+            Escribir ""
+        FinPara
+        
+        // solicitar movimiento
+        Escribir "Mover desde la torre: "
+        leer t1
+        Escribir "hacia la torre: "
+        leer t2
+        
+        si t1<1 O t1>3 O t2<1 O t2>3 Entonces // controlar que el nro de torre sea valido
+            Escribir "Movimiento invalido"
+            Esperar Tecla
+        sino
+            Si cant_discos[t1]=0 Entonces // controlar que la torre 1 tengo al menos un disco
+                Escribir "Movimiento invalido"
+                Esperar Tecla
+            Sino
+                disco_a_mover <- torres[t1,cant_discos[t1]] // obtener tamanio del disco que se quiere mover
+                puede_mover<-verdadero
+                Si cant_discos[t2]<>0 entonces // controlar que la torre dos no tenga discos o tenga solo discos mas grandes
+                    Si torres[t2,cant_discos[t2]]<disco_a_mover Entonces
+                        puede_mover<-Falso
+                    FinSi
+                FinSi
+                Si puede_mover Entonces // si paso todos los controles, mover
+                    cant_movs <- cant_movs+1
+                    cant_discos[t2]<-cant_discos[t2]+1
+                    torres[t2,cant_discos[t2]] <- disco_a_mover
+                    cant_discos[t1]<-cant_discos[t1]-1
+                Sino
+                    Escribir "Movimiento invalido"
+                    Esperar Tecla
+                FinSi
+            FinSi
+        FinSi
+    
+    FinMientras
+    
+    // mostrar resultado
+    Limpiar Pantalla
+    Escribir "Juego finalizado en ",cant_movs," movimientos!"
+    
+FinProceso
+
+
+
+
+
+TaTeTi: Algoritmo para el juego del TaTeTi
+
+
+
+
+Proceso TaTeTi
+    
+    // incializa dos matrices de 3x3, una para guardar la ficha que se ve, 
+    // y otra para un valor asociado a la ficha, para un jugador sera 1, para
+    // el otro 2, entoces para ver quien gano se multiplica por fila, por 
+    // columna y por diagonal, si el resultado es 1 gano el primer jugador,
+    // si es 8 gano el segundo, si es 0 es porque faltaba completar, si
+    // es otra cosa, estan las tres fichas, pero no son del mismo jugador
+    Dimension Tab1[3,3]
+    Dimension Tab2[3,3]
+    Para i<-1 Hasta 3 Hacer
+        Para j<-1 Hasta 3 Hacer
+            Tab1[i,j]<-0
+            Tab2[i,j]<-" "
+        FinPara
+    FinPara
+    TurnoJugador1<-Verdadero
+    Terminado<-Falso
+    Ganador<-Falso
+    CantTurnos<-0
+    
+    Mientras ~ Terminado hacer
+        
+        // dibuja el tablero
+        Borrar Pantalla
+        Escribir " "
+        Escribir "      ||     ||     "
+        Escribir "   ",Tab2[1,1],"  ||  ",Tab2[1,2],"  ||  ",Tab2[1,3]
+        Escribir "     1||    2||    3"
+        Escribir " =====++=====++======"
+        Escribir "      ||     ||     "
+        Escribir "   ",Tab2[2,1],"  ||  ",Tab2[2,2],"  ||  ",Tab2[2,3]
+        Escribir "     4||    5||    6"
+        Escribir " =====++=====++======"
+        Escribir "      ||     ||     "
+        Escribir "   ",Tab2[3,1],"  ||  ",Tab2[3,2],"  ||  ",Tab2[3,3]
+        Escribir "     7||    8||    9"
+        Escribir " "
+        
+        Si ~ Ganador y CantTurnos<9 Entonces
+            
+            // carga auxiliares segun a qué jugador le toca
+            Si TurnoJugador1 Entonces
+                Ficha<-'O'; Valor<- 1; Objetivo<-1
+                Escribir "Turno del jugador 1 (X)"
+            Sino
+                Ficha<-'X'; Valor<- 2; Objetivo<-8
+                Escribir "Turno del jugador 2 (O)"
+            FinSi
+            
+            // pide la posición para colocar la ficha y la valida
+            Escribir "Ingrese la Posición (1-9):"
+            
+            Repetir
+                Leer Pos
+                Si Pos<1 o Pos>9 Entonces
+                    Escribir "Posición incorrecta, ingrese nuevamente: "
+                    Pos<-99;
+                Sino
+                    i<-trunc((Pos-1)/3)+1
+                    j<-((Pos-1) MOD 3)+1
+                    Si Tab1[i,j]<>0 Entonces
+                        pos<-99
+                        Escribir "Posición incorrecta, ingrese nuevamente: "
+                    FinSi
+                FinSi
+            Hasta Que Pos<>99
+            // guarda la ficha en la matriz tab2 y el valor en tab1
+            CantTurnos<-CantTurnos+1
+            Tab1[i,j]<-Valor
+            Tab2[i,j]<-Ficha
+            
+            // verifica si ganó, buscando que el producto de las fichas en el tablero de Objetivo
+            aux_d1<-1; aux_d2<-1
+            Para i<-1 hasta 3 hacer
+                aux_i<-1; aux_j<-1
+                aux_d1<-aux_d1*Tab1[i,i]
+                aux_d2<-aux_d2*Tab1[i,4-i]
+                Para j<-1 hasta 3 hacer
+                    aux_i<-aux_i*Tab1[i,j]
+                    aux_j<-aux_j*Tab1[j,i]
+                FinPara
+                Si aux_i=Objetivo o aux_j=Objetivo Entonces
+                    Ganador<-Verdadero
+                FinSi
+            FinPara
+            Si aux_d1=Objetivo o aux_d2=Objetivo Entonces
+                Ganador<-Verdadero
+            Sino
+                TurnoJugador1 <- ~ TurnoJugador1
+            FinSi
+            
+        Sino
+            
+            Si Ganador Entonces
+                Escribir "Ganador: "
+                Si TurnoJugador1 Entonces
+                    Escribir "Jugador 1!"
+                Sino
+                    Escribir "Jugador 2!"
+                FinSi
+            Sino
+                Escribir "Empate!"
+            FinSi
+            Terminado<-Verdadero
+            
+        FinSi
+        
+    FinMientras
+    
+FinProceso
+
+
+
+
+
+
+
+
+
+
+
+
+
+

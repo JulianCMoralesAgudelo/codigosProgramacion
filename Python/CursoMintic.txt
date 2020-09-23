@@ -1,0 +1,6 @@
+https://github.com/arleserp/MinTIC2022/blob/master/1-Tareas%20B%C3%A1sicas%20en%20Python.ipynb
+https://colab.research.google.com/notebooks/intro.ipynb
+https://repl.it/
+https://www.youtube.com/watch?v=orr063XGPPE
+https://docs.python.org/3/tutorial/interpreter.html
+https://github.com/arleserp/cursopython

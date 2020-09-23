@@ -1,0 +1,410 @@
+Carlos Eduardo Sanchez Salazar
+ordenamiento de vectores
+Ordenamiento ascendente tipo selección.  El vector se llena automáticamente con la función azar:
+
+Proceso ordenarVectores  
+
+    Definir arreglo, i, NumIn, minimo, aux como entero; 
+    Escribir "Ingrese la cantidad de datos que va a igresar";
+    Leer NumIn;
+    dimension arreglo[NumIn];
+    Escribir "Este es el vector original:";
+    Escribir "";
+    Para i <- 1 hasta NumIn con paso 1 Hacer
+		arreglo[i] <- azar(1000);
+        Escribir arreglo[i];
+    FinPara       
+
+    Para i <- 1 hasta NumIn con paso 1 Hacer
+        minimo <- i;
+        Para j<-i+1 Hasta NumIn Con Paso 1 Hacer
+            Si arreglo[j] < arreglo[minimo] Entonces    //con < ordena ascendente, con > ordena descendente
+                minimo <- j;
+            FinSi
+        FinPara
+        aux <- arreglo[i];
+        arreglo[i] <- arreglo[minimo];
+        arreglo[minimo] <- aux;
+    FinPara
+
+    Escribir "Este es el vector ordenado:";
+    Escribir "";   
+
+    Para i <- 1 hasta NumIn con paso 1 Hacer
+        Escribir arreglo[i];
+    FinPara
+
+FinProceso
+
+Ordenamiento descendente tipo burbuja.  El vector se llena automáticamente con la función azar:  
+
+Proceso burbuja  
+
+    Dimension vector[4];
+    Para i<-1 Hasta 4 Con Paso 1 Hacer
+        vector[i] <- azar(400);
+        Escribir vector[i];
+    FinPara
+   
+    Para i<-1 Hasta 4 Con Paso 1 Hacer
+        Para j<-i+1 Hasta 4 Con Paso 1 Hacer
+            si vector[i] < vector[j] Entonces   //con < ordena descendente, con > ordena ascendente
+                aux <- vector[i];
+                vector[i] <- vector[j];
+                vector[j] <- aux;
+            FinSi
+        FinPara
+    FinPara
+
+    Escribir "";
+
+    Escribir "";
+
+    Para i<-1 Hasta 4 Con Paso 1 Hacer
+        Escribir vector[i]
+    Fin Para
+
+FinProceso
+
+Ordenamiento ascendente tipo selección y búsqueda binaria.  El vector se llena automáticamente con la función azar: 
+
+Proceso ordenarVectores
+    Definir arreglo, i, NumIn, minimo, aux, NumBuscar, inf, sup, centro como entero;
+    Escribir "Ingrese la cantidad de datos que va a igresar";
+    Leer NumIn;
+    dimension arreglo[NumIn];
+    Escribir "Este es el vector original:";
+    Escribir "";
+    Para i <- 1 hasta NumIn con paso 1 Hacer
+        arreglo[i] <- azar(1000);
+        Escribir arreglo[i];
+    FinPara       
+
+    Para i <- 1 hasta NumIn con paso 1 Hacer
+		minimo <- i;
+        Para j<-i+1 Hasta NumIn Con Paso 1 Hacer
+            Si arreglo[j] < arreglo[minimo] Entonces
+                minimo <- j;
+            FinSi
+        FinPara
+        aux <- arreglo[i];
+        arreglo[i] <- arreglo[minimo];
+        arreglo[minimo] <- aux;
+    FinPara   
+
+    Escribir "Este es el vector ordenado:";
+    Escribir "";
+    
+	Para i <- 1 hasta NumIn con paso 1 Hacer
+		Escribir arreglo[i];
+    FinPara   
+
+    Escribir "Ingrese un numero a buscar";
+
+    Leer NumBuscar;
+    inf <- 1;
+    sup <- NumIn;  
+
+    Repetir       
+
+        centro <- trunc((inf + sup)/2);
+        si arreglo[centro] < NumBuscar entonces
+            inf <- centro + 1;
+        FinSi       
+
+        si arreglo[centro] > NumBuscar entonces
+            sup <- centro - 1;
+        FinSi
+    
+	Hasta Que inf > sup | arreglo[centro] = NumBuscar   
+    Si inf > sup Entonces
+        Escribir "No se encontro el dato";
+    Sino
+        Escribir "el dato se encontro en la posicion ", centro;
+    FinSi   
+
+FinProceso
+
+Algoritmo que permite el ingreso de los nombres de n empleados (vector 1) y sus correspondientes edades (vector 2) SE USAN SUBPROCESOS. Durante todo el programa se mantiene la correspondencia de datos entre los dos vectores.  Tiene un subprograma que permite el ordenamiento ascendente por edades y otro que permite el ordenamiento descendente por edades, e imprime los nombres de las personas y su respectiva edad; otro subprograma que permite la impresión del nombre de la persona con mayor edad y el último subprograma que permite la impresión del nombre de la persona con menor edad:
+
+SubProceso edadMenor(nombre Por Referencia, edad Por Referencia, N)
+    eMenor <- 200;
+    Para i <- 1 hasta N con paso 1 hacer
+        Si edad[i] < eMenor entonces
+            eMenor <- edad[i]
+            posicion <- i
+        FinSi
+    FinPara  
+
+    Escribir "La persona con menor edad es  ", nombre[posicion], "  y tiene  ", edad[posicion], "  años ";
+
+FinSubProceso
+
+//_______________________________________________________________________________________
+
+SubProceso edadMayor(nombre Por Referencia, edad Por Referencia, N)
+
+   
+
+    eMayor <- 0
+
+    Para i <- 1 hasta N con paso 1 hacer
+
+       
+
+        si edad[i] > eMayor entonces
+
+            eMayor <- edad[i]
+
+            posicion <- i
+
+        FinSi
+
+       
+
+    FinPara
+
+   
+
+    Escribir "La persona con mayor edad es  ", nombre[posicion], "  y tiene  ", edad[posicion], "  años "
+
+   
+
+FinSubProceso
+
+//_______________________________________________________________________________________
+
+SubProceso descendente(nombre Por Referencia, edad Por Referencia, N)
+
+   
+
+    Para i <- 1 hasta N con paso 1 hacer
+
+       
+
+        imax <- i
+
+        Para j <- i+1 hasta N con paso 1 hacer           
+
+            si edad[j] > edad[imax] entonces
+
+                imax <- j
+
+            FinSi       
+
+        FinPara
+
+        aux1 <- nombre[i]
+
+        aux2 <- edad[i]
+
+        nombre[i] <- nombre[imax]
+
+        edad[i] <- edad[imax]
+
+        nombre[imax] <- aux1
+
+        edad[imax] <- aux2
+
+       
+
+    FinPara
+
+   
+
+    Escribir ""
+
+    Escribir "        Datos ingresados en orden asendente"
+
+    Escribir ""
+
+    Escribir "NOMBRE         EDAD"
+
+    Escribir ""
+
+   
+
+    Para i <- 1 hasta N con paso 1 hacer       
+
+        Escribir nombre[i], "         ", edad[i]       
+
+    FinPara
+
+   
+
+FinSubProceso
+
+//_______________________________________________________________________________________
+
+SubProceso ascendente(nombre Por Referencia, edad Por Referencia, N)
+
+   
+
+    Para i <- 1 hasta N con paso 1 hacer
+
+       
+
+        imin <- i
+
+        Para j <- i+1 hasta N con paso 1 hacer           
+
+            si edad[j] < edad[imin] entonces
+
+                imin <- j
+
+            FinSi           
+
+        FinPara
+
+        aux1 <- nombre[i]
+
+        aux2 <- edad[i]
+
+        nombre[i] <- nombre[imin]
+
+        edad[i] <- edad[imin]
+
+        nombre[imin] <- aux1
+
+        edad[imin] <- aux2
+
+       
+
+    FinPara
+
+   
+
+    Escribir ""
+
+    Escribir "        Datos ingresados en orden asendente"
+
+    Escribir ""
+
+    Escribir "NOMBRE         EDAD"
+
+    Escribir ""
+
+   
+
+    Para i <- 1 hasta N con paso 1 hacer       
+
+        Escribir nombre[i], "         ", edad[i]       
+
+    FinPara
+
+   
+
+FinSubProceso
+
+//_______________________________________________________________________________________
+
+SubProceso menu()
+
+   
+
+    Escribir ""
+
+    Escribir "        MENU PRINCIPAL"
+
+    Escribir ""
+
+    Escribir "Para ver los datos ordenados ascendentemente digite 1"
+
+    Escribir "Para ver los datos ordenados descendentemente digite 2"
+
+    Escribir "Para ver la persona con mayor edad digite 3"
+
+    Escribir "Para ver la persona con menor edad digite 4"
+
+    Escribir ""
+
+   
+
+FinSubProceso
+
+//_______________________________________________________________________________________
+
+Proceso vectoresEmpleadosEdad
+
+   
+
+    Escribir "ingrese la cantidad de empleados"
+
+    Leer N
+
+    Dimension nombre[N]
+
+    Dimension edad[N]
+
+   
+
+    Para i <- 1 hasta N con paso 1 Hacer
+
+       
+
+        Escribir "Ingrese el nombre del empleado número ", i
+
+        Leer nombre[i]
+
+        Escribir "Ingrese la edad del empleado número ", i
+
+        Leer edad[i]
+
+       
+
+    FinPara
+
+   
+
+    resp <- 's'
+
+   
+
+    Mientras resp = 's' | resp = 'S' Hacer
+
+       
+
+        menu()
+
+        leer menuIn
+
+       
+
+        segun menuIn hacer
+
+            1:
+
+                ascendente(nombre, edad, N)
+
+            2:
+
+                descendente(nombre, edad, N)
+
+            3:
+
+                edadMayor(nombre, edad, N)
+
+            4:
+
+                edadMenor(nombre, edad, N)
+
+            De Otro Modo:
+
+                Escribir "Ingresó un error, solo números de 1 a 4"
+
+        FinSegun
+
+       
+
+        Escribir "Desea hacer una nueva consulta?  s/n"
+
+        Leer resp
+
+        Borrar Pantalla
+
+    FinMientras
+
+   
+
+FinProceso
+

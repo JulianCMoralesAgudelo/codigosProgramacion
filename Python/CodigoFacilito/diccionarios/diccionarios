@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+#-*- coding: iso-8859-15 -*-
+
+diccionario = { "redes_sociales": ['Twitter', 'Facebook','Linkedin'],
+		3: 'Tres',
+		'Hola':'Mundo'
+		}
+
+
+print diccionario.has_key('Hola')
+print diccionario.items()
+print diccionario.values()
+print diccionario.pop(3)
+print diccionario.clear()
+
+diccionario["clave nueva"] = 'valor'
+
+print diccionario
+
+diccionario_2 = diccionario.copy()
+
+print diccionario
+print diccionario_2

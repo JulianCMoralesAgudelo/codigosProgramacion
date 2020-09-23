@@ -1,0 +1,6 @@
+https://bookdown.org/jboscomendoza/r-principiantes4/
+https://bookdown.org/gboccardo/manual-ED-UCH/estadistica-descriptiva-con-rstudio.html
+
+install.packages(«tinytex»)
+
+tinytex::install_tinytex()
