@@ -1,0 +1,618 @@
+/*Problema 1 - Escribir un método recursivo que devuelve la suma de los N primeros
+	enteros.*/
+	public static int sumN(int n) {
+		
+		if (n<0) {
+			System.out.println("Error: n cannot be negative!!!");
+			return -1;
+		}
+		
+		if (n==0) return 0;
+		else return n+ sumN(n-1);
+	}
+	
+	/*Problema 2 – Escribir un método recursivo que tome dos enteros, x y n (podemos
+	suponer que n> = 0) y devuelve x power n.
+	*/
+	public static int power(int x, int n) {
+
+		if (n<0) {
+			System.out.println("Error: n cannot be negative!!!");
+			return -1;
+		}
+		
+		if (n==0) return 1; //case base 
+		else return x*power(x,n-1);
+	}
+	
+	
+	
+	
+	
+	/*
+	 * Problema 3 – Escribir un método recursivo que tome un número entero y devuelva el
+	número de sus dígitos (por ejemplo, 2356 tiene 4 dígitos). Pista: 2356/10 = 235 ,
+	235/10=23 y 23/10= 2 y no puedo seguir dividiendo entre 10
+	 */
+	public static int digits(int n) {
+		if (n<0) n=Math.abs(n);  
+		
+		if (0<=n && n<10) return 1;//case base
+		else return 1 + digits(n/10);
+	}
+
+	
+	
+	/*
+	 * Problema 4 – Escribir un método recursivo que toma un array de enteros y devuelve la
+		suma de sus elementos.
+	 */
+	public static int sumArray(int a[]) {
+		if (a==null || a.length==0) return 0;  
+		return sumArray(a,0);
+	}
+	
+	private static int sumArray(int a[], int pos) {
+		if (pos==a.length-1) return a[pos]; //case base
+		else return a[pos]+sumArray(a,pos+1);
+	}
+	
+	
+	/*
+	 * Problema 5 – Escribir un método recursivo que tome un array de enteros y compruebe
+		si el array está ordenado (orden ascendente).
+	 */
+	public static boolean checkSort(int a[]) {
+		if (a==null || a.length<0) return true;  
+		return checkSort(a,0);
+	}
+	private static boolean checkSort(int a[], int pos) {
+		if (pos==a.length-1) return true; 
+		
+		if (a[pos+1]<a[pos]) return false;
+		else return checkSort(a,pos+1);
+	}
+
+	
+	/*
+	 * Problema 6 – Escribir un método recursivo que toma un array de enteros y devuelve el
+	elemento más pequeño.
+	 */
+	public static int findMin(int a[]) throws Exception {
+		if (a==null || a.length==0) throw new Exception("array is empty");  
+		return findMin(a,0);
+	}
+
+	private static int findMin(int a[], int pos) {
+		if (pos==a.length-1) return a[pos]; 
+		else return Math.min(a[pos], findMin(a,pos+1)); 
+		
+	}
+	
+	
+	/*Problema 7 – Escribir un método recursivo que toma un array de enteros y un entero y
+	devuelve el índice de este entero en el array. Si el entero no existe en el array, el método
+	devuelve -1.*/
+	public static int find(int a[], int x)  {
+		if (a==null || a.length==0) {
+			System.out.println("array is empty");
+			return -1;  
+		}
+		return find(a,x,0);
+	}
+	
+	
+	private static int find(int a[], int x, int pos) {
+		if (a[pos]==x) return pos; 
+		
+
+		if (pos==a.length-1) return -1; 
+		else return find(a,x,pos+1);
+		
+	}
+	
+	
+	/*
+	 * Problema 8 – Escribir un método recursivo que toma dos enteros y devuelve su
+	división entera sin el operador / Pista: puede usar el operador - en la llamada recursiva.
+	 */
+	public static int divisionInt(int a, int b) {
+		if (a<b) return 0;  //case base, because a is not enough larger in order to substract b
+		else return 1 + divisionInt(a-b,b); //at least one time, we can substract b from a.
+	}
+	
+	
+	/*Problema 9 – Escribir un método recursivo que tome dos enteros x y y, tal que
+	devuelva x veces y utilizando el método ruso. Este método ruso consiste en:
+	1) Haz dos columnas. Escribir el número más grande en la primera columna y el
+	más pequeño en la segunda.
+	2) En la primera columna, dividir el número por 2 repetidamente hasta llegar a 1.
+	En la segunda columna, multiplicar el número por 2 hasta que tenga las mismas
+	filas que en la primera columna.
+	3) Tachar las filas cuyo valor en la primera columna sea un número par (x% 2 ==0)
+	4) Finalmente, sumar los números no tachados en la segunda columna.
+	Resultado = 74+592+4736 = 5402
+	*/
+	public static int russianmultiply(int x, int y) {
+
+		if (x==0 || y==0) return 0;
+
+	    if(x==1)   return y;	
+	    
+	    if(x%2==0) return russianmultiply(x/2, y*2); 
+	    else return y + russianmultiply(x/2, y*2); 
+	       
+	}
+	
+	/*
+	 * Problema 10: Escriba un método recursivo que tome un entero positivo n y devuelva la
+		suma de enteros positivos de 2 a n.
+	 */
+	public static int sum2toN(int n) {
+		if (n<=0) {
+			System.out.println("error: number has to be positive!");
+			return 0;
+		}
+		
+		if (n==1) return 0;
+		return n + sum2toN(n-1);
+	}
+	
+
+	/*
+	 * Problema 10: Escribir un método recursivo que tome dos parámetros n y k, y devuelva el valor del
+		Coeficiente binomial C (n, k). El coeficiente binomial es el número de k-combinaciones
+		de un conjunto de n elementos. En otras palabras, el número total de subconjuntos de k
+		elementos escogidos de un conjunto con n elementos.
+		C(n,k) = n! / (k!*(n-k)!)
+		where n!= n *(n-1)*(n-2)*...*2*1
+	 */
+	public static int binomial(int n, int k) {
+		if (n<k) {
+			System.out.println("n has to be greater than k");
+			return 0;
+		}
+		if (k==0 ||k ==n) return 1; //case base
+		else return binomial(n-1,k-1) + binomial(n-1,k);
+	}
+	
+	/*
+	 * Problema 11 – Escribir un método recursivo que ordene enteros en orden ascendente.
+		Pista: almacena el elemento más pequeño en la primera posición del array, y luego
+		ordena el resto del array mediante una llamada recursiva.
+	 */
+	public static int findMinIndex(int[] data, int x, int y){
+
+		int mini;
+
+	    if(x==y) mini=x;
+	    else{
+	        int temp=findMinIndex(data, x+1, y);
+	        if (data[temp]<data[x]) mini=temp;
+	        else mini=x;
+	    }
+	    return mini;
+	}
+
+	
+	public static void sort(int[] data){
+		if (data==null || data.length==0) return;
+		  sort(data,0,data.length-1);
+	}
+	
+	public static void sort(int[] data, int x, int y){
+
+		    if (x==y)  return;
+		    
+		    int index=findMinIndex(data, x, y);
+	
+		    int temp=data[index];
+		    data[index]=data[x];
+		    data[x]=temp;
+	
+		   sort(data,x+1,y);
+  }
+	
+	/*
+	 * Problema 12 – Escribir un método recursivo que toma un array e invierte sus elementos.
+	 */
+	public static void reverse(int a[]) {
+		if (a==null) return;  
+		reverse(a,0,a.length-1);
+	}
+	
+	private static void reverse(int a[], int start, int end) {
+		if (start<end) {
+			int x=a[start];
+			a[start]=a[end];
+			a[end]=x;
+			reverse(a,start+1,end-1);
+		}
+	}
+
+	
+	/*
+	 * Problema 13 – Escribir un método recursivo que toma un número entero y devuelve
+		una cadena que contiene la representación binaria del número.
+	 */
+	public static String toBinary(int n) {
+		    if (n<0) {
+		    	System.out.println("error: n cannot be negative");
+		    	return null;
+		    }
+		    
+			if(n / 2 == 0) return "" + n;  //it's 0 or 1
+			else return toBinary(n/2) + "" + n % 2;  //n%2 will be 0 or 1
+	}
+	 
+	 
+	/*
+	 * Problema 14 ¿Qué devuelve este método para diferentes valores de x?
+	 */
+	 public static int f(int x){
+		 if (x >100) return x- 10;
+		 else return(f(f(x+11)));
+	 }
+	 
+	 /*
+	  * Problema 15 – Escribir un método recursivo que tome una cadena y verifica si es una
+		palabra capicúa (por ejemplo, level, did, rotator).
+	  */
+	 public static boolean checkPalindrome(String s) {
+			if (s==null) return true;
+			else return checkPalindrome(s,0,s.length()-1);
+	 }
+		
+	private static boolean checkPalindrome(String s, int left, int right) {
+			if (left==right) return true;
+			
+			else if (left<right) {
+				return s.charAt(left)==s.charAt(right) && checkPalindrome(s, left+1, right-1);
+			} return false;
+		}
+		
+		
+	/*
+	 *Problema 16 – Implementar el algoritmo de búsqueda binaria usando recursión.
+		Escriba un método recursivo que tome un array ordenado y un entero y devuelva la
+		posición de este número en el array.
+	 */
+		public static int binarySearchRec(int a[], int x)  {
+			
+			if (!checkSort(a)) {
+				System.out.println("error: array is not sorted");
+				return -1;
+			}
+				
+			
+			if (a==null || a.length==0) return -1;  
+			return  binarySearchRec(a,x,0,a.length);
+		}
+		
+		private static int binarySearchRec(int a[], int x, int start, int end) {
+			if (start==end && a[start]==x) return start;
+			else if (start<end) {
+				int m=start + (end - start)/2;
+				if (x<a[m]) return binarySearchRec(a,x,start,m-1);
+				else if (x>a[m]) return binarySearchRec(a,x,m+1,end);
+				else return m; //x=a[m]
+				
+			} else return -1; 
+			
+		}
+		
+		
+		/*
+		 	Problema 17 – Escribir un método recursivo que toma una cadena y devuelve su
+			longitud (sin utilizar la propiedad de la longitud). Se puede usar la subcadena del
+			método.
+		 */
+		public static int lengthof(String s) {
+			if (s==null||s.equals("")) return 0;
+			return 1+lengthof(s.substring(1));
+		}
+
+		/*
+		 * Problema 18 – Escribir un método recursivo que toma una cadena y la imprime. Pista:
+			debes imprimir cada carácter.
+		 */
+		public static void printRec(String s) {
+			if (s==null||s.equals(""))  System.out.println("");
+			System.out.print(s.charAt(0));
+			printRec(s.substring(1));
+		}
+	
+		
+
+		//Problema 19- ¿Qué significa este método?
+		public static int mystery(int n) {
+				if (n == 0) return 0;
+				else return n + mystery(n-1);
+		}
+		
+
+		/*
+		 * Problem 20. Una permutación de un conjunto de objetos es un orden particular de esos
+			objetos. Cuando hablamos de "todas las permutaciones" de un conjunto, nos referimos a
+			todas las formas posibles de ordenar esos objetos. Ejemplos:
+			• Dado el conjunto vacío {}, la única permutación posible es {}
+			• Dado el conjunto {A}, la única permutación posible es {A}
+			• Dado el conjunto {A, B}, las posibles permutaciones son {AB, BA}
+			• Dado el conjunto {A, B, C}, las posibles permutaciones son
+			• {ABC, ACB, BAC, BCA, CAB, CBA}
+			Escribir un método que tome un array de caracteres y encuentre todas sus
+			permutaciones.
+		 */
+		public static ArrayList<String> permutationsOf(String s) {
+			ArrayList<String> result=new ArrayList<String>();
+			if (s.length()==0) result.add("");
+			else if (s.length()==1)  result.add(s);
+			else {
+				char letter=s.charAt(0);
+				ArrayList<String> lstPerm=permutationsOf(s.substring(1));
+				for (String perm: lstPerm) {
+					for (int i=0; i<=perm.length();i++) {
+						result.add(perm.substring(0, i)+letter+perm.substring(i));
+					}
+				}
+				
+			}
+			return result;
+		}
+		
+		
+		/*
+		Problema 21 – Escribir un método que implemente la función de Ackerman. La
+		función de Ackermann se puede definir de la siguiente manera:
+		•
+		•
+		•
+		A(0, y) = y + 1
+		A(x, 0) = A(x - 1, 1)
+		A(x, y) = A(x - 1, A(x, y - 1))
+		Esta función tarda mucho tiempo en computarse (¿por qué?). Implica llamadas recursivas repetidas 
+		*/
+		public static int ackerman(int x, int y) {
+			 if (x == 0)  return y + 1;
+		    else if (y == 0) return ackerman(x - 1, 1);
+		    else return ackerman(x - 1, ackerman(x, y - 1));
+		    
+		}
+		
+		
+		/*
+		 * Problema 22. Escribir un método recursivo que toma una cadena y devuelve una nueva
+		cadena donde todos los caracteres x en minúscula han sido reemplazados por caracteres
+		y. No puede usar los métodos replaceAll o replace.
+		 */
+		public static String replaceXbyY(String s) {
+			if (s==null || s.equals("")) return s;
+			
+			char first=s.charAt(0);
+			if (first=='x') first='y';
+			return first + replaceXbyY(s.substring(1));
+		}
+
+		/*
+		 * Problema 23. Escribe un método recursivo que toma un número entero y devuelve la
+			suma de sus dígitos. Si usa x% 10, puede obtener su dígito más a la derecha (126% 10
+			es 6). x / 10 elimina este dígito (126/10 es 12).
+		 */
+		public static int sumDigits(int n) {
+			n=Math.abs(n);
+			
+			if (n<10) return n; 
+			else return n%10 + sumDigits(n/10); 
+		}
+		
+		//Problema 24 – Escribir un método recursivo que toma una cadena y devuelve su inversa.
+		public static String reverse(String s) {
+			if (s==null ||s.equals("")) return s;
+			char letter=s.charAt(0);
+			return reverse(s.substring(1))+letter;
+		}
+
+
+		/*
+		 * Problema 25 – Escribir un método recursivo que toma una cadena y elimina sus
+			duplicados consecutivos. Por ejemplo, "aabccba" se transforma en "abcba".
+		 */
+		public static String removeConDupli(String s) {
+				if (s==null ||s.length()<=1) return s;
+				char first=s.charAt(0);
+				char second=s.charAt(1);
+				if (first==second) return removeConDupli(s.substring(1));
+				else return first + removeConDupli(s.substring(1));
+				
+		}
+		
+		/*
+		 * Problema 26 – Escribir un método recursivo que tome dos enteros, x e y, y calcule x mod 
+		 * sin usar el operador %.
+		 */
+		public static int modulus(int val, int divisor) {
+		     if(val < divisor)
+		        return val;
+		     else
+		        return modulus(val - divisor, divisor);
+		  }
+					
+		//Problema 27. Qué es f(0)? f(0) = 997
+		public static int f2(int x) {
+				if (x >1000)		return x-4;
+				else return f(f(x+5));
+		}
+		
+		/*
+		 * Problema 28 – Escribir un método recursivo que toma dos cadenas ordenadas
+			alfabéticamente y las concatena en una nueva cadena. El resultado también debe estar
+			ordenado alfabéticamente.
+		 */
+		public static boolean isSorted(String str) {
+			if (str==null || str.length()<=1) return true;
+			char first=str.charAt(0);
+			char second=str.charAt(1);
+			if (first>second) return false;
+			return isSorted(str.substring(1));
+			
+		}
+		
+		public String merge(String first, String second) {
+			if (!isSorted(first) || !isSorted(first) ) {
+						System.out.println("strings have to be sorted");
+						return null;
+			}
+			
+			if(first ==null || first.equals(""))    return second==null? first:second;
+			else if (second == null || second.equals(""))  return first;      
+			else if(first.charAt(0) < second.charAt(0))    return first.charAt(0) + merge( first.substring(1, first.length()), second);      
+			else return second.charAt(0) + merge(first, second.substring(1, second.length()));    
+			
+		}
+		
+		//Problema 29. Explicar la funcionalidad de las siguientes funciones:
+		
+		//a) Obtiene la suma de y más el sumatorio de los números de 1 a x: fun1(x,y)=1+2+3+...+x+y
+		public static int fun1(int x, int y) {
+			if(x == 0) return y;
+			else return fun1(x - 1,x + y);
+		}
+		
+		
+		//b) Devuvelve el índice del elemento más pequeño del array
+		public static int minIndex(int a[], int start, int end) {
+			
+			if (start==end) return start;
+			else {
+				int m=(start+end)/2;
+				int x=minIndex(a,start,m);
+				int y=minIndex(a,m+1,end);
+				//return the lower number
+				if (a[x]<a[y]) return x;
+				else return y;
+			}
+		}
+		
+	
+		//b) El método coloca el valor mínimo del array en la posición start-index
+		public static void fun2(int arr[], int start_index, int end_index) {	
+			if(start_index >= end_index) return;	
+		  
+			int min_index; 	
+			int temp; 	
+				
+		  
+			min_index = minIndex(arr, start_index, end_index);	
+			temp = arr[start_index];	
+			arr[start_index] = arr[min_index];	
+			arr[min_index] = temp;
+		}
+
+		/*
+		 * Problema 30. Escribir un método recursivo que compruebe si un número n es primo
+			(hay que comprobar si n es divisible por cualquier número por debajo n).
+		 */
+		public static boolean isPrime(int n) {
+			if (n<0) {
+				System.out.println("n cannot be negative");
+				return false;
+			}
+			if (n<=2) return true;
+			else return isPrime(n,2);
+		}
+		
+		public static boolean isPrime(int x,int y) {
+			if (x==y) return true;
+			if (x%y==0) return false;
+			else return isPrime(x,y+1);
+		}
+		
+		
+		/*
+		 * Problema 31. Escribir un método recursivo que imprima un número entero con comas
+		en los lugares correctos. Por ejemplo, 12345 se imprimirá como 12,345.
+		 */
+		public static String addCommas(int n) {
+				if (n<1000) return String.valueOf(n);
+				else {
+					String tmp=addCommas(n/1000)+",";
+					if (n % 1000 < 100) tmp=tmp+"0";
+			        if (n % 1000 < 10) tmp=tmp+"0";
+			        tmp=tmp+n%1000;
+			        return tmp;
+				}
+		}
+		
+		
+		/*
+		 * Problema 32. Escribir un método recursivo para invertir las palabras en una cadena, es
+			decir, "cat is running" se convierte en "running is cat".
+		 */
+		public static String reversePhrase(String str) {
+			if (str==null||str.length()==0) return str;
+			int pos=str.indexOf(' ');
+			if (pos>-1) {
+				String firstWord=str.substring(0, pos);
+				return reversePhrase(str.substring(pos+1))+" " +firstWord;
+			}
+			else return str;
+			
+		}
+		
+		
+		
+		/*
+		 * Problema 33. Una palabra se considera elfish si contiene las letras: e, l, y f en ella, en
+		cualquier orden. Por ejemplo, diríamos que las siguientes palabras son elfish: whiteleaf,
+		tasteful y waffles, porque cada uno contiene esas letras. Escribir un método recursivo
+		llamado elfish? que, dada una palabra, se indique si esa palabra es elfish o no. Escribir
+		una función de predicado más generalizada llamada x-ish? que, dadas dos palabras,
+		devuelva verdadero si todas las letras de la primera palabra están contenidas en el
+		segundo.
+		 */
+		
+		public static boolean elfish(String str) {
+			if (str==null||str.length()==0) return false;
+			String aux="elf";
+			
+			return elfish(str,aux,0);
+		}
+		
+		public static boolean elfish(String str, String aux, int i) {
+			 if (i>=aux.length()) return true;
+			 
+			 char letter=aux.charAt(i);
+			 if (str.contains(String.valueOf(letter))) return  elfish(str,aux,i+1);
+			 else return false;
+			 
+		}
+		
+		//Write a more generalized predicate function called x-ish? that, given two words, returns
+		//true if all the letters of the first word are contained in the second.
+		public static boolean xish(String word1, String word2) {
+			if (word1==null||word1.length()==0) return true;
+			if (word2==null||word2.length()==0) return false;
+			
+			String first=String.valueOf(word1.charAt(0));
+			if (word2.contains(first)) return xish(word1.substring(1),word2);
+			else return false;
+
+		}
+		
+		
+
+		/*
+		 * Problema 34. Escribir un método recursivo de Java que cuente el número de
+			ocurrencias del carácter 'a' en una cadena. Sugerencia: una método signature que
+			funciona es public static int countA (String s). Considerar usar los métodos charAt o
+			startsWith en String.
+		 */
+		public static int countA(String s) {
+			if (s==null||s.length()==0) return 0;
+			
+			if (s.charAt(0)=='a') return 1+countA(s.substring(1));
+			else return countA(s.substring(1));
+		}
+		
+
+	

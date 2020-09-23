@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"com.platzi.amazonviewer"},{"l":"com.platzi.amazonviewer.dao"},{"l":"com.platzi.amazonviewer.db"},{"l":"com.platzi.amazonviewer.model"},{"l":"com.platzi.util"}]
