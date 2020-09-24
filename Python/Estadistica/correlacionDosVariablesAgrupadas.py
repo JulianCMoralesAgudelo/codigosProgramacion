@@ -2,6 +2,8 @@
 # -*- coding: UTF-8 -*-
 from math import sqrt
 # ##############################################################################################################################################################
+separador = "###############################################################################################################################################################"
+
 # Declaracion e inicializacion de variables
 
 xi = []
@@ -33,7 +35,7 @@ for i in range(0, cantidad):
     fi.append(float(input()))
 
 n = sum(fi)
-
+print("")
 # ##############################################################################################################################################################
 # Funciones
 
@@ -113,7 +115,7 @@ b = (sum(yi) - (m*sum(xi)))/n
 
 
 # Criterios de coorelacion
-if(r>0):
+if(r > 0):
     mensaje = "La relacion es directamente proporcional y "
 else:
     mensaje = "La relacion es inversamente proporcional y "
@@ -138,8 +140,8 @@ else:
 # ##############################################################################################################################################################
 
 # Presentacion de datos
-
-print("##############################################################################################################################################################")
+print("")
+print(separador)
 print("")
 print("Datos de la variable x")
 print(xi)
@@ -149,9 +151,9 @@ print("")
 print("Varianza de x:\t\t\t{0:.2f}".format(varianzaxi))
 print("")
 print("Desviacion tipica de x:\t\t{0:.2f}".format(desviacionTipicax))
-
-print("###############################################################################################################################################################")
-
+print("")
+print(separador)
+print("")
 print("Datos de la variable y")
 print(yi)
 print("")
@@ -160,9 +162,8 @@ print("")
 print("Varianza de y:\t\t\t{0:.2f}".format(varianzayi))
 print("")
 print("Desviacion tipica de y:\t\t{0:.2f}".format(desviacionTipicay))
-
-
-print("###############################################################################################################################################################")
+print("")
+print(separador)
 print("")
 print("Datos de coorelacion")
 print("")
@@ -170,7 +171,7 @@ print("Coovarianza:\t\t\t{0:.2f}".format(coovarianza))
 print("")
 print("Coeficiente de correlacion de Pearson R:\t\t{0:.3f}".format(r), mensaje)
 print("")
-print("###############################################################################################################################################################")
+print(separador)
 print("")
 print("Datos de la recta de regresion")
 print("")
@@ -180,5 +181,5 @@ print("Coeficiente de posicion b:{0:.2f}".format(b))
 print("")
 print("La ecuacion de regresion seria y = mx + b:")
 print("")
-print("y ={0:.3f}".format(m),"x + {0:.3f}".format(b))
+print("y = {0:.3f}".format(m), "x + {0:.3f}".format(b))
 print("")
