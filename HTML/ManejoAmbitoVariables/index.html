@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="js/programa.js"></script>
+  </head>
+  <body>
+    <label>Proporciona tu nombre y da enter:</label>
+    <input type="text" name="nombre" onchange="mostrarNombre(this);" />
+    <div id="resultado"></div>
+    <button onclick="saludarLocal('Carlos');">Saludar Local</button>
+    <br />
+    <button onclick="saludarGlobal();">Saludar Global</button>
+  </body>
+</html>

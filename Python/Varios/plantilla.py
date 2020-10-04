@@ -4,12 +4,6 @@
 
 
 
-
-
-
-
-
-
 # Declaracion e inicializacion de variables
 
 
