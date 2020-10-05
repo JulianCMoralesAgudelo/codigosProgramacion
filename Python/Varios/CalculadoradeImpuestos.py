@@ -1,4 +1,4 @@
-﻿#calculadora de impuestos
+﻿# calculadora de impuestos
 '''
 Tu tarea es escribir una calculadora de impuestos.
 
@@ -10,18 +10,20 @@ Observa el código en el editor: solo lee un valor de entrada y genera un result
 
 Prueba tu código con los datos que hemos proporcionado.
 '''
-
+ceroimpuesto = "El impuesto es: 0.0 pesos"
 
 ingreso = float(input("Ingrese el ingreso anual: "))
-if ingreso <=0:
-    print("El impuesto es: 0.0 pesos")
+if ingreso <= 0:
+    print(ceroimpuesto)
 if 0 < ingreso <= 85528:
     impuesto = (ingreso * 0.18) - 556.02
-    if impuesto <= 0: print("El impuesto es: 0.0 pesos")
+    if impuesto <= 0:
+        print(ceroimpuesto)
     else:
-        print("El impuesto es:" , round(impuesto,0) , "pesos")
+        print("El impuesto es:", round(impuesto, 0), "pesos")
 if ingreso > 85528:
     impuesto = 14839.02 + (ingreso - 85528) * 0.32
-    if impuesto <= 0: print("El impuesto es: 0.0 pesos")
+    if impuesto <= 0:
+        print(ceroimpuesto)
     else:
-        print("El impuesto es:" , round(impuesto,0) , "pesos")
+        print("El impuesto es:", round(impuesto, 0), "pesos")
