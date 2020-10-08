@@ -1,0 +1,13 @@
+[1007/152357.292:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1007/161026.906:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1007/161032.126:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1007/161251.971:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1007/161325.137:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1007/161404.628:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1007/164513.508:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1007/164532.544:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1007/164719.139:ERROR:crash_report_database_win.cc(498)] failed to stat report
+[1007/164747.642:ERROR:crash_report_database_win.cc(498)] failed to stat report
+[1007/165747.646:ERROR:crash_report_database_win.cc(498)] failed to stat report
+[1007/165747.646:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\Julian\AppData\Local\Google\Chrome\User Data\Crashpad\reports\b7788fb0-d4a6-48a3-a13d-83caa6a28da9.dmp: El sistema no puede encontrar el archivo especificado. (0x2)
+[1007/165747.646:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
