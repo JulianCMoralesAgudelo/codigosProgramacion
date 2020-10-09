@@ -1,0 +1,36 @@
+$ie = New-Object -com "InternetExplorer.Application" $ie.Navigate("about:blank")
+$ie.visible = $true $ie.document.write('
+<canvas id="tablero" width="200" height="200"></canvas>
+<script>
+  var dibujo = document.getElementById("tablero").getContext("2d");
+  var distancia = 4;
+  var objeto = { height: 25, width: 25, x: 10, y: 10, color: "#000000" };
+  render();
+  document.body.onkeydown = function (event) {
+    switch (event.keyCode) {
+      case 37: // Izquierda
+        objeto.x -= distancia;
+        objeto.y += 0;
+        break;
+      case 38: // Arriba
+        objeto.x += 0;
+        objeto.y -= distancia;
+        break;
+      case 39: // Derecha
+        objeto.x += distancia;
+        objeto.y += 0;
+        break;
+      case 40: // Bajar
+        objeto.x += 0;
+        objeto.y += distancia;
+        break;
+    }
+    render();
+  };
+  function render() {
+    console.log(objeto);
+    dibujo.clearRect(0, 0, tablero.width, tablero.height);
+    dibujo.fillRect(objeto.x, objeto.y, objeto.width, objeto.height);
+  }
+</script>
+')
