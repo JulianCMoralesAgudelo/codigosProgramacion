@@ -1,4 +1,4 @@
-/Revisa si un numero entero es primo o no.
+//Revisa si un numero entero es primo o no.
 boolean isPrime(int n) {
     //revisa si n es multiplo de 2
     if (n%2==0) return false;
