@@ -1,9 +1,0 @@
-2020-11-11 19:23:30 jdbc[14]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "TBL_EMPLOYEES" no encontrada
-Table "TBL_EMPLOYEES" not found; SQL statement:
-INSERT INTO TBL_EMPLOYEES (first_name, last_name, email)
-VALUES
-('Julian', 'Morales', 'juliancmorales10@gmail.com'),
-('Joaquin', 'Posada', 'joaco@gmail.com'),
-('Francisco', 'Ortega', 'fco@hotmail.com'),
-('Andrés', 'Alarcón', 'andres@gmail.com') [42102-200]
