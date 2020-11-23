@@ -7,9 +7,9 @@ a = 0
 b = 1
 c = 2
 
-for i in range(3):
-    comienza = random.randint(0, a)
-    print(comienza, end='')
+for i in range(3):    
+    cero = random.randint(0, a)
+    print(cero, end='')
 print()
 
 
