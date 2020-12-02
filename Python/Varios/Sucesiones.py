@@ -20,13 +20,3 @@ print("La cantidad de numeros, es el recorrido:", recorrido,
       "sobre la diferencia", d, " (an-a1/d) + 1 =", recorrido/d + 1)
 print("La cantidad de numeros es:", n)
 print("La sumatoria de numeros en la lista es de:", promedio*n)
-print("La sumatoria de numeros en la lista es de:", sum(lista))
-# Pasos
-print("Paso 1: encuentra a1 y an (el primer y el último término)")
-
-# Lista que almacenara los datos impares en el rango creado en el paso anterior
-'''
-lista = [numero for numero in numeros]
-for i in lista:
-    print(i)
-'''
