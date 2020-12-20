@@ -4,7 +4,7 @@
 # Definición de funciones
 def palindromo(frase):
     # 1. Quitar acentos y signos de puntuación
-    tr = str.maketrans("áéíóúüñÁÉÍÓÚÜÑ.,;!¡¿?", "aeiouunAEIOUUN       ")
+    tr = str.maketrans("áéíóúüñÁÉÍÓÚÜÑ.,;!¡¿?", "aeiouunAEIOUUN")
     frase = frase.translate(tr)
     # 2. Quitar espacios
     frase = "".join(frase.split())
@@ -16,10 +16,15 @@ def palindromo(frase):
     else:
         return False
 
-# lectura de datos y manipulacion de datos
+
+# lectura de datos, manipulacion de datos y presentacion de datos.
+lista = ['OSO', 'MARIA', 'ANA', 'GOOGLE', 'OLO']
+
+salida = []
+
+for i in range(len(lista)):
+    salida.append(palindromo(lista[i]))
 
 
-frase = input('Dame una palabra: ')
-print(palindromo(frase))
-
-# Presentacion de datos.
+print(lista)
+print(salida)
