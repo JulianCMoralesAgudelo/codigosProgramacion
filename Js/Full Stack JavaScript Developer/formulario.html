@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario con CSS</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        input [type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgb(207, 203, 203);
+            border-radius: 10px;
+            resize: vertical;
+            background-color: white;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+        }
+        
+        input:focus {
+            background-color: rgb(224, 155, 35);
+            border: 5px solid rgb(136, 141, 148);
+            border-radius: 1px;
+        }
+        
+        label {
+            padding: 12px 12px 12px 0;
+            display: block;
+        }
+        
+         ::placeholder {
+            color: black;
+        }
+        
+        select {
+            width: 100%;
+            height: 40px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formulario estilizado css</h1>
+    <div>
+        <form action=http://localhost:3000 method="POST">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Tu nombre aqui" required/><br>
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido" placeholder="Tu apellido aqui" required/><br>
+            <label for="correo">Correo</label>
+            <input type="text" name="correo" id="correo" placeholder="Tu correo aqui" required/><br>
+            <label for="pais">Pais</label>
+            <select name="pais" id="pais">
+            <option disable selecte hidden>Seleccione</option>
+            <option>Colombia</option>
+            <option>Peru</option>
+            <option>Mexico</option>
+            <option>Venezuela</option>
+            </select>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+
+</html>
