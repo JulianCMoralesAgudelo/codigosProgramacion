@@ -4,18 +4,18 @@ import smtplib
 import ssl
 import time
 
-smtp_server = "smtp.gmail.com"
+smtp_server = 'smtp.gmail.com'
 port = 587  # For starttls
-sender_email = "juliancMoralesDev2021@gmail.com"
-receiver_email = "julianCmorales10@gmail.com"
-print("Ingrese la contraseña de su correo")
-password = input("Type your password and press enter: ")
-message = f"""\
+sender_email = ''
+receiver_email = ''
+print('Ingrese la contraseña de su correo')
+password = input('Type your password and press enter: ')
+message = f'''\
 Subject: Feliz navidad
 To: {receiver_email }
 From: {sender_email}
 
-Que la paz y la armonía celebrada en Navidad  estén presentes todos los días de tu año nuevo. ¡Feliz Navidad  y felices fiestas!."""
+Que la paz y la armonía celebrada en Navidad  estén presentes todos los días de tu año nuevo. ¡Feliz Navidad  y felices fiestas!.'''
 # Create a secure SSL context
 context = ssl.create_default_context()
 

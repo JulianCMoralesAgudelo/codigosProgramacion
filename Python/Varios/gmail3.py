@@ -5,13 +5,13 @@ from email.mime.multipart import MIMEMultipart
 import csv
 import time
 
-sender_email = "juliancmorales10@gmail.com"
-receiver_email = "juliancmorales10@gmail.com"
-password = "Jcm@*.*2021*"
+sender_email = ""
+receiver_email = ""
+password = ""
 
 message = MIMEMultipart("alternative")
 message["Subject"] = "Your Mail Subject"
-message["From"] = 'juliancmorales10@gmail.com'
+message["From"] = ''
 
 context = ssl.create_default_context()
 server = smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context)

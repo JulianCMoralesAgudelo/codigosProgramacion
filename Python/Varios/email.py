@@ -6,8 +6,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 print("*** enviar email con gmail ****")
-user = 'juliancmorales10@gmail.com'
-password = 'Jcm@*.*2021*'
+user = ''
+password = ''
 
 # Cabeceras
 remitente = input("From, ejemplo: administrador <admin@gmail.com>: ")

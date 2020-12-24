@@ -6,9 +6,9 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 # Correo de acceso al servidor
-MY_ADDRESS = 'juliancmorales10@gmail.com'
+MY_ADDRESS = ''
 # Password de acceso a la cuenta de email
-PASSWORD = 'Jcm@*.*2021*'
+PASSWORD = ''
 
 # Configurar el servidor de correo
 s = smtplib.SMTP(host='smtp.gmail.com', port=587)  # servidor y puerto

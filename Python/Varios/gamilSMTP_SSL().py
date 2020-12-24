@@ -8,5 +8,5 @@ password = input("Type your password and press enter: ")
 context = ssl.create_default_context()
 
 with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
-    server.login("juliancMoralesDev@gmail.com", password)
+    server.login("", password)
     # TODO: Send email here

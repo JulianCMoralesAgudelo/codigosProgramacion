@@ -3,20 +3,24 @@
 import time
 import re
 
+# Cadena con los correos
+cadena = """
+    """
+
+# Se eliminan caracteres externos al utf8
+cadena = cadena.encode('ascii', 'ignore').decode('ascii')
 
 
-texto = '''
-Adriana Maria Lopera Hernanadez <adrianamlopera@yahoo.com>, Adriana Maria Lopera Hernanadez <alopera@procuraduria.gov.co>, Biviana Sierra Agudelo <bivianasierra@hotmail.com>, Gilma Agudelo <gilmaagudelo53@gmail.com>, John Camayo Ortiz <johncamayo@hotmail.es>, "Juan Carlos Calle, Primo" <juancqcalle@hotmail.com>, Lina María Calle Pérez <linacalle@hotmail.com>, Lina María Calle Pérez <limacape@gmail.com>, Mor <yisela.guzman.morales@gmail.com>, Rosa Perez <rosapdec@une.net.co, Yisela Guzman>
-'''
+# Expresion regular para filtrar los correos
+mailsearch = re.compile(r'[\w\-\.]+@[\w\-\.]+\.+[a-zA-Z]{1,4}')
 
-patron = r'[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}'
+# Lista para almacenar los correos
+foundMail = []
 
-emails = re.findall(patron, texto)
+#  Bucle para recorrer la cadena y extraer los correos
+for mail in mailsearch.findall(cadena):
+    foundMail.append(mail)
 
-for i in emails:
-    print(i)
-    
-
-#print(emails)
-
-
+#  Bucle para Imprimir resultados
+for mail in foundMail:
+    print(mail)

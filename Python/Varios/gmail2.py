@@ -6,14 +6,14 @@
 
 import smtplib
 
-fromaddr = 'juliancmorales10@gmail.com'
-toaddrs  = 'julian.morales@gmail.com'
+fromaddr = ''
+toaddrs  = ''
 msg = 'Correo enviado utilizano Python + smtplib en www.pythondiario.com'
 
 
 # Datos
-username = 'juliancmorales10@gmail.com'
-password = 'Jcm@*.*2021*'
+username = ''
+password = ''
 
 # Enviando el correo
 server = smtplib.SMTP('smtp.gmail.com:587')

@@ -3,7 +3,7 @@ import ssl
 
 smtp_server = "smtp.gmail.com"
 port = 587  # For starttls
-sender_email = "juliancMoralesDev@gmail.com"
+sender_email = ""
 print('Ingrese la contraseña de su correo')
 password = input("Type your password and press enter: ")
 

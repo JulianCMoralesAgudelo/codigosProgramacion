@@ -11,8 +11,8 @@ from string import Template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-MY_ADDRESS = 'juliancmorales10@gmail.comm'
-PASSWORD = 'Jcm@*.*2021*'
+MY_ADDRESS = ''
+PASSWORD = ''
 
 
 def get_contacts(filename):
