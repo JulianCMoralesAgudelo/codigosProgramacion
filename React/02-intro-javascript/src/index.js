@@ -1,16 +1,32 @@
-// Arreglos en js
+// Desestructuracion
+// Asignacion desestructurante.
+const persona = {
+  nombre: "Julián",
+  edad: 37,
+  clave: "BlackPanther",
+};
 
-const arreglo = [1, 2, 3, 4];
-let arreglo2 = arreglo;
-//let arreglo2 = [arreglo, 5];
+/*
+const { nombre } = persona;
+const { edad } = persona;
+const { clave } = persona;
+console.log(nombre);
+console.log(edad);
+console.log(clave);
+const { nombre, edad, clave } = persona;
+*/
 
-//arreglo2.push(5);
-arreglo2 = [...arreglo, 5];
+const context = ({ nombre, edad, clave, rango = "Razo" }) => {
+  //console.log(nombre, edad, clave, rango);
 
-const arreglo3 = arreglo2.map(function (numero) {
-  return numero * 2;
-});
+  return {
+    nombreClave: clave,
+    anios: edad,
+    latlng:{
+      
+    }
+  };
+}
 
-console.log(arreglo);
-console.log(arreglo2);
-console.log(arreglo3);
+const { nombreClave, anios } = context ( persona );
+console.log( nombreClave, anios );
