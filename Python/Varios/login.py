@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+'''
+Script      : script_check_nuid
+Autor       : Julián Camilo Morales Agudelo <juliancmorales10@gmail.com>
+Versión     : 1.0
+Modificado  : 2021-01-07
+Descripcion : Login de consola igual al de los sistemas linux utilizando el     módulo que getpass que permite pedirle al usuario datos sin que estos sean impresos en pantalla como es característico del modo no crudo del flujo de entrada, mediante la estructura de datos diccionario.
+'''
+
+
 # Importacion de modulos
-from contextlib import nullcontext
 import getpass
 
 
