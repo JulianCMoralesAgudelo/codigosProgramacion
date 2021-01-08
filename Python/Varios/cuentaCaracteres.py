@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*- 
 '''
-Script          : 
+Script          : cuentaCaracteres.py
 Autor           : Julián Camilo Morales Agudelo <juliancmorales10@gmail.com>
 Versión         : 1.0
 Modificado      : 2021-01-08
