@@ -12,15 +12,6 @@ Descripcion : Login de consola igual al de los sistemas linux utilizando el     
 
 # Importacion de modulos
 import getpass
-
-
-'''
-Autor: Julián Camilo Morales Agudelo <juliancmorales10@gmail.com>
-Descripcion: Script para simular un sistema de registro de usuarios con la estructura de datos diccionarios.
-Fecha de creacion: 07/01/2021
-'''
-
-
 '''
 # Definición
 Escribir un programa que almacene la cadena de caracteres contraseña en variable.
