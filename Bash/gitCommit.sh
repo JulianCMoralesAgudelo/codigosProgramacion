@@ -13,8 +13,6 @@ MULTILINE-COMMENT
 
 clear
 
-
-
 ######################################################################################################################################################################################
 while true; do
 
@@ -94,6 +92,6 @@ read -p "Footer: " footer
 # Carpeta donde esta configurado el repositorio
 cd /home/julian/codigosProgramacion
 git add *
-git commit -m "$type" -m "$submit" -m "$body" -m "$footer"
+git commit -m "Type :$type" -m "Submit :$submit" -m "Body: $body" -m "Footer $footer"
 git push
-git log 
+git log
