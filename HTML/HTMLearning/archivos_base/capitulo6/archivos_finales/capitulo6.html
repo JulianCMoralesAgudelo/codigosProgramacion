@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Capítulo 5 - curso HTML</title>
+    
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,100,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <link href="estilos.css" rel="stylesheet" />
+     
+    <link href="assets/icono.ico" rel="icon" />
+    <script src="main.js" type="text/javascript"></script>
+    
+</head>
+<body onload="init()">
+    <!-- este es mi primer ejemplo con HTML  -->
+
+    <header>
+        <nav></nav>
+    </header>
+    
+    <aside>
+        <nav></nav>
+    </aside>
+    
+    <section>
+        <h1>Imágenes y HTML</h1>
+        <article>
+            <h2>Etiquetas de imagen</h2>
+            <img src="assets/raspberry_shortcake_min.jpg" alt="pastel de fresas" title="Pastel de fresas"  />
+            <h2>Imágenes de fondo</h2>
+            <div id="imagen_fondo"></div>
+            
+            <h2>Iconos</h2>
+            <a href="#">Ver fotos <i class="fa fa-picture-o fa-2x"></i>
+</a>
+            <h2>Mapas de imagen</h2>
+            <img src="assets/cherries-with-cherry-tea-cake-2.jpg" width="400" usemap="pastel" />
+            <map name="pastel">
+                <area alt="bizcocho" title="bizcocho" href="bizcocho.html" shape="rect" coords="0,0,450,150">
+                <area alt="cerezas" title="cerezas" href="cerezas.html" shape="rect" coords="140,150,450,338">
+            </map>
+        </article>
+        
+    </section>
+    
+    <footer>
+    </footer>
+</body>
+</html>

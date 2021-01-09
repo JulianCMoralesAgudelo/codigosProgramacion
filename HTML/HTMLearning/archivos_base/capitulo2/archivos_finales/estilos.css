@@ -1,0 +1,18 @@
+/* estilos principales de la página */
+body{
+    /* color: #ff0000; 
+    font-size: 24px; */
+    font-family: 'Lato', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 10px;
+}
+
+.texto_resaltado{
+    color: #ff00ff;
+    font-weight: 700;
+    font-size: 22px;
+    font-family: Arial, tahoma, Georgia, sans-serif;
+    
+}

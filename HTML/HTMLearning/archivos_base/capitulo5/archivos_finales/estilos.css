@@ -1,0 +1,38 @@
+/* estilos principales de la página */
+body{
+    /* color: #ff0000; 
+    font-size: 24px; */
+    font-family: 'Lato', sans-serif;
+}
+
+
+#contents {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: azure;
+}
+
+.bloque_dcha {
+    display: inline-block;
+    width: 40%;
+}
+
+.bloque_izda {
+    display: inline-block;
+    width: 40%;
+}
+
+ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+nav ul{
+    padding-left: 0px;
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #333333;
+}

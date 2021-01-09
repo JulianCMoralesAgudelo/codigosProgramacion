@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Capítulo 8 - curso HTML</title>
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,100,700' rel='stylesheet' type='text/css'>
+    
+    <link href="estilos.css" rel="stylesheet" />
+     
+    <script src="main.js" type="text/javascript"></script>
+    
+</head>
+<body onload="init()">
+    <!-- este es mi primer ejemplo con HTML  -->
+
+    <header>
+        <nav></nav>
+    </header>
+    
+    <aside>
+        <nav></nav>
+    </aside>
+    
+    <section>
+        <h1>Formularios</h1>
+        <form action="http://midominio.com/miservicioWeb.php" method="post">
+            <fieldset>
+                <legend>Datos de usuario</legend>
+                <label for="nombre" >Nombre</label>
+            <input name="nombre" id="nombre" type="text" placeholder="escribe tu nombre" required autofocus />
+            <br />
+            <label for="apellidos" >Apellido</label>
+            <input name="apellidos" id="apellidos" type="text" placeholder="primer apellido"  />
+            <br />
+            <label for="edad" >Edad</label>
+            <input name="edad" id="edad" type="number" />
+            <br />
+            <label for="clave" >Contraseña</label>
+            <input name="clave" id="clave" type="password" />
+                <br />
+            <label for="mail" >Email</label>
+            <input name="mail" id="mail" type="email" />
+            <input type="hidden" name="sitio" value="contanimacion" />
+            </fieldset>
+            
+            <fieldset>
+                <legend>Otros datos</legend>
+                <label for="comentarios">Comentarios</label>
+                <textarea name="comentarios" id="comentarios" >Aliquip te illum, an anim anim duis pariatur, ne cillum duis ut tempor, quorum .</textarea>
+                <br />
+                <label for="envio_mail">Enviar mails</label>
+                <input name="envio_mail" id="envio_mail" type="checkbox" />
+                <label for="llamar_tel" >Llamar por teléfono</label>
+                <input name="llamar_tel" id="llamar_tel" type="checkbox" checked />
+                
+                <br />
+                <label for="rojo">Rojo</label>
+                <input name="color" id="rojo" value="rojo" type="radio" />
+                <label for="verde">Verde</label>
+                <input name="color" id="verde" value="verde" type="radio" />
+                <label for="azul">Azul</label>
+                <input name="color" id="azul" value="azul" type="radio" checked />
+                
+                <br />
+                <label for="paises">Nación</label>
+                <select name="paises" id="paises">
+                    <optgroup label="Europa">
+                         <option value="es">España</option>
+                    <option value="fr" selected>Francia</option>
+                    </optgroup>
+                   <optgroup label="América">
+                       <option value="ar">Argentina</option>
+                    </optgroup>
+                </select>
+                
+                <br />
+                <label for="ciudad">Ciudad</label>
+                <input name="ciudad" id="ciudad" list="nombre_ciudades" />
+                <datalist id="nombre_ciudades">
+                    <option value="León"/>
+                    <option value="Málaga"/>
+                    <option value="Madrid"/>
+                    <option value="Burgos"/>
+                    <option value="Toledo"/>
+                </datalist>
+            </fieldset>
+            
+            <input type="button" value="Enviar form" />
+            <input type="reset" value="Borrar" />
+            
+            <button type="submit">Enviar con button <i class="fa fa-chevron-circle-right"></i>
+</button>
+        </form>
+        
+    </section>
+    
+    <footer>
+    </footer>
+</body>
+</html>

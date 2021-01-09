@@ -1,0 +1,19 @@
+/* estilos principales de la página */
+body{
+   font-family: 'Lato', sans-serif;
+}
+
+
+nav ul{
+    padding-left: 0px;
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #333333;
+}
+a{
+    text-decoration: none;
+    color: #aa0000;
+    font-weight: 700;
+}
