@@ -8,10 +8,14 @@ Versión         : 1.0
 Modificado      : 2021-01-08
 Documentación   : https://codigofacilito.com/articulos/buenas-practicas-en-commits-de-git
 Descripcion     : Buenas Practicas en Commits de Git
+Sugerencias     : Hacer ejecutable y mover a la carpeta /bin, modificar la carpeta del repositorio.
 MULTILINE-COMMENT
 
 clear
 
+
+
+######################################################################################################################################################################################
 while true; do
 
     echo "¿Seleccione el tipo de commit que desea realizar?"
@@ -63,7 +67,7 @@ while true; do
 
 done
 
-######################################################################################################
+######################################################################################################################################################################################
 echo ""
 echo "Indique el asunto para el commit:
 Como sugerencia, el asunto no debe contener mas de 50 caracteres, debe iniciar con una letra mayuscula y no terminar con un punto. 
@@ -87,7 +91,8 @@ echo ""
 
 read -p "Footer: " footer
 
+# Carpeta donde esta configurado el repositorio
 cd /home/julian/codigosProgramacion
 git add *
-git commit -m "$submit $body $footer"
+git commit -m "$submit" -m "`$body`" -m "$footer"
 git push
