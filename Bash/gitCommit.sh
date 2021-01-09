@@ -94,5 +94,5 @@ read -p "Footer: " footer
 # Carpeta donde esta configurado el repositorio
 cd /home/julian/codigosProgramacion
 git add *
-git commit -m "$submit" -m "`$body`" -m "$footer"
+git commit -m "$submit" -m "$body" -m "$footer"
 git push
