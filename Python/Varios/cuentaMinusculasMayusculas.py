@@ -5,7 +5,7 @@ Script          : cuentaMinusculasMayusculas
 Autor           : Julián Camilo Morales Agudelo <juliancmorales10@gmail.com>
 Versión         : 1.0
 Modificado      : 2021-01-08
-Documentación   : Programa que identifica los caracteres mayusculas, minusculas, numeros y caracteres 
+Documentación   : Programa que identifica los caracteres mayusculas, minusculas, numeros , caracteres y los cuenta. 
 
 '''
 
@@ -22,7 +22,7 @@ textoSoloMinusculas = re.sub('[^a-z]', '', texto)
 
 textoSoloNumeros = re.sub('[^\d]', '', texto)
 
-textoSoloCaracteres = re.sub('[\W]', '', texto)
+textoSoloCaracteres = re.sub('[^\W]', '', texto)
 
 print("Mayusculas: " + str(len(textoSoloMayusculas)))
 

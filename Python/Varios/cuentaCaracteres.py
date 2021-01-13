@@ -1,23 +1,33 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 '''
-Script          : cuentaCaracteres.py
+Script          : cuentaMinusculasMayusculas
 Autor           : Julián Camilo Morales Agudelo <juliancmorales10@gmail.com>
 Versión         : 1.0
 Modificado      : 2021-01-08
-Documentación   :
-Descripcion     : 
+Documentación   : Programa que identifica los caracteres mayusculas, minusculas, numeros , caracteres y los cuenta. 
+
 '''
 
-# Declaracion e inicializacion de variables 
+# importando el modulo de regex de python
+import re
 
 
-# lectura de datos
+# Declaracion e inicializacion de variables y lectura de datos
+texto = input("Ingrese palabra: ")
 
+textoSoloMayusculas = re.sub('[^A-Z]', '', texto)
 
+textoSoloMinusculas = re.sub('[^a-z]', '', texto)
 
-# Manipulacion de datos
+textoSoloNumeros = re.sub('[^\d]', '', texto)
 
+textoSoloCaracteres = re.sub('[^\W]', '', texto)
 
+print("Mayusculas: " + str(len(textoSoloMayusculas)))
 
-# Presentacion de datos.
+print("Minusculas: " + str(len(textoSoloMinusculas)))
+
+print("Numeros: " + str(len(textoSoloNumeros)))
+
+print("Caracteres: " + str(len(textoSoloCaracteres)))
