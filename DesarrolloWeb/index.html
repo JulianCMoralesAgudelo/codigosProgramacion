@@ -4,90 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ies=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bienes Raices</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <header>
-        <a href="/">
-            <img src="img/logo.svg" alt="Logotipo de bienes raices">
-        </a>
-        <nav>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="anuncio.html">Anuncio</a>
-            <a href="blog.html">Blog</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-        <h1>Venta de Casas y Departamentos Exclusivos de lujo</h1>
+    <header class="site-header inicio">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="/">
+                    <img src="img/logo.svg" alt="Logotipo de bienes raices">
+                </a>
+                <nav class="navegacion">
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="anuncios.html">Anuncio</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+            <h1>Venta de Casas y Departamentos Exclusivos de lujo</h1>
+        </div>
+        <!--Contenedor-->
     </header>
 
-    <section>        
-        <h2>Mas sobre los textos</h2>
+    <section class="contenedor seccion">
+        <h2 class="fw-300 centrar-texto">Mas Sobre Nosotros</h2>
 
-        <div>
-            <img src="/img/icono1.svg" alt="Icono seguridad">
-            <h3>Seguridad</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat architecto tempora odio, veritatis quas,
-                adipisci minus deserunt earum, quod mollitia molestiae officia? Nobis voluptatum sapiente soluta, dolore
-                incidunt nostrum deleniti!</p>
+        <div class="iconos-nosotros">
+            <div class="icono">
+                <img src="/img/icono1.svg" alt="Icono seguridad">
+                <h3>Seguridad</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat architecto tempora odio, veritatis
+                    quas, adipisci minus deserunt earum, quod mollitia molestiae officia? Nobis voluptatum sapiente
+                    soluta, dolore
+                    incidunt nostrum deleniti!</p>
+            </div>
+
+            <div class="icono">
+                <img src="/img/icono2.svg" alt="Icono Mejor Precio">
+                <h3>El mejor precio</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, molestiae autem. Numquam dolor,
+                    eaque
+                    quasi
+                    soluta exercitationem cupiditate maxime temporibus quam molestiae blanditiis est adipisci molestias
+                    alias
+                    accusamus corrupti minima.</p>
+            </div>
+
+            <div class="icono">
+                <img src="/img/icono3.svg" alt="Icono a tiempo">
+                <h3>A tiempo</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolores praesentium iusto
+                    pariatur
+                    animi
+                    tempora? Autem soluta sint numquam sequi itaque molestiae, illo, dolores eos id officiis cumque
+                    tempore
+                    a.
+                </p>
+            </div>
         </div>
-
-        <div>
-            <img src="/img/icono2.svg" alt="Icono Mejor Precio">
-            <h3>El mejor precio</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, molestiae autem. Numquam dolor, eaque
-                quasi
-                soluta exercitationem cupiditate maxime temporibus quam molestiae blanditiis est adipisci molestias
-                alias
-                accusamus corrupti minima.</p>
-        </div>
-
-        <div>
-            <img src="/img/icono3.svg" alt="Icono a tiempo">
-            <h3>A tiempo</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolores praesentium iusto pariatur
-                animi
-                tempora? Autem soluta sint numquam sequi itaque molestiae, illo, dolores eos id officiis cumque tempore
-                a.
-            </p>
-        </div>
-
     </section>
 
-    <main>
-        <h2>Casas y Depas en Venta</h2>
-        <div>
-            <img src="img/anuncio1.jpg" alt="Anuncio casa en el lago">
-            <h3>Casa de lujo en el lago</h3>
-            <p>Casa en el lago con excelnte vista y acabados de lujo a excelente precio.</p>
-            <p>3,000.0000</p>
-            <a href="#">Ver propiedad</a>
+    <main class="contenedor seccion">
+        <h2 class="fw-300 centrar-texto">Casas y Depas en Venta</h2>
+
+        <div class="contenedor-anuncios">
+            <div class="anuncio">
+                <img src="img/anuncio1.jpg" alt="Anuncio casa en el lago">
+                <div class="contenido-anuncio">
+                    <h3>Casa de lujo en el lago</h3>
+                    <p>Casa en el lago con excelnte vista y acabados de lujo a excelente precio.</p>
+                    <p class="precio">3,000.0000</p>
+                    <a href="#" class="boton boton-amarillo d-block">Ver Propiedad</a>
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio2.jpg" alt="Anuncio casa en el lago">
+                <div class="contenido-anuncio">
+                    <h3>Casa terminados de lujo</h3>
+                    <p>Casa con diseño moderno, asi cmo tecnologia inteligente y amoblada.</p>
+                    <p class="precio">2,000.0000</p>
+                    <a href="#" class="boton boton-amarillo d-block">Ver Propiedad</a>
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio3.jpg" alt="Anuncio casa con alberca">
+                <div class="contenido-anuncio">
+                    <h3>Casa con alberca</h3>
+                    <p>Casa con alberca y acabados de lujo en la ciudad, excelente oportunidad.</p>
+                    <p class="precio">3,000.0000</p>
+                    <a href="#" class="boton boton-amarillo d-block">Ver Propiedad</a>
+                </div>
+            </div>
         </div>
 
-        <div>
-            <img src="img/anuncio2.jpg" alt="Anuncio casa en el lago">
-            <h3>Casa terminados de lujo</h3>
-            <p>Casa con diseño moderno, asi cmo tecnologia inteligente y amoblada.</p>
-            <p>2,000.0000</p>
-            <a href="#">Ver propiedad</a>
+        <div class="ver-todas">
+            <a href="anuncios.html" class="boton boton-verde">Ver Todas</a>
         </div>
-
-        <div>
-            <img src="img/anuncio3.jpg" alt="Anuncio casa con alberca">
-            <h3>Casa con alberca</h3>
-            <p>Casa con alberca y acabados de lujo en la ciudad, excelente oportunidad.</p>
-            <p>3,000.0000</p>
-            <a href="#">Ver propiedad</a>
-        </div>
-
-        <a href="anuncio.html">Ver Todas</a>
 
     </main>
 
 
-    <section>
+    <section class="imagen-contacto">
         <h2>Encuenta la casa de tus sueños</h2>
         <p>Llena el formulario de contacto y un asesor se pondra en contacto con tigo a la brevedad.</p>
         <a href="contacto.html">Contactanos</a>
@@ -113,7 +137,7 @@
     </section>
 
     <section>
-        <h3>Testimnoniales</h3>
+        <h3>Testimoniales</h3>
         <blockquote>
             El personal se comporto de una excelene forma, muy buen atencion y la casa que me ofrecieron cumple con
             todas
@@ -123,9 +147,9 @@
     </section>
 
     <footer>
-        <nav>
+        <nav class="navegacion">
             <a href="nosotros.html">Nosotros</a>
-            <a href="anuncio.html">Anuncio</a>
+            <a href="anuncios.html">Anuncio</a>
             <a href="blog.html">Blog</a>
             <a href="contacto.html">Contacto</a>
         </nav>
