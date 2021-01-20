@@ -14,7 +14,6 @@ Descripcion     : Crear una funcion que permita al usuario calcular el area de f
 
 # Triangulo
 
-
 def areaTriangulo(a, b):
     print("El area del triangulo es:", end=" ")
     return (a*b)/2

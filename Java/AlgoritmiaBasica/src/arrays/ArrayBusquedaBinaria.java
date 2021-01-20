@@ -16,7 +16,7 @@ public class ArrayBusquedaBinaria {
 	public static void ordIntercambio(int a[]) {
 		int i, j;
 		for (i = 0; i < a.length - 1; i++)
-			// sitúa mínimo de a[i+1]...a[n-1] en a[i]
+			// sitï¿½a mï¿½nimo de a[i+1]...a[n-1] en a[i]
 			for (j = i + 1; j < a.length; j++)
 				if (a[i] > a[j]) {
 					intercambiar(a, i, j);
@@ -64,7 +64,7 @@ public class ArrayBusquedaBinaria {
 
 	}
 
-	// Búsqueda Binaria
+	// Busqueda Binaria
 	public static int busquedaBinaria(int vector[], int n, int dato) {
 		int centro, inf = 0, sup = n - 1;
 		while (inf <= sup) {
