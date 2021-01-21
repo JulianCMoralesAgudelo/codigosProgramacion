@@ -1,0 +1,97 @@
+
+Spring Framework - 00 -Herramientas Curso Spring Framework desde cero
+
+https://www.youtube.com/watch?v=Y8_OUwAUdnY&feature=youtu.be
+
+
+Paso 1 : Java y Maven
+
+	https://linuxize.com/post/how-to-install-apache-maven-on-debian-10/
+
+	#Imprimir ruta ruta java
+
+	https://www.baeldung.com/find-java-home	
+
+
+Pasos 2: Spring Tool Suite 3
+
+	https://github.com/spring-projects/toolsuite-distribution/wiki/Spring-Tool-Suite-3
+
+
+Pasos 3: Docker
+
+	https://hub.docker.com/
+
+	https://computingforgeeks.com/install-docker-and-docker-compose-on-debian-10-buster/
+	
+
+Paso  4: Configurar la base de datos
+	
+	docker pull store/oracle/database-enterprise:12.2.0.1
+
+	docker run -d -p 8081:8081 -p 1521:1521 --name oracle-db store/oracle/database-enterprise:12.2.0.1
+
+	docker exec -it oracle-db bash
+
+	source /home/oracle/.bashrc;
+
+	sqlplus /nolog
+
+	connect sys as sysdba
+
+	password : Oradoc_db1
+	
+	alter session set "_oracle_script"= true;
+
+	create user codigorupestre identified by codigorupestre;
+
+	GRANT CONNECT, RESOURCE, DBA TO codigorupestre;
+
+Paso  5: Descargar e instalar sql developer de oracle
+
+	https://www.oracle.com/co/tools/downloads/sqldev-v192-downloads.html
+
+	https://kokegudiel2.medium.com/instalacion-de-sql-developer-en-linux-7d6b49c40ef4
+
+
+Paso  6: Descargar e instalar oracle client 12c
+
+	https://www.oracle.com/co/database/technologies/instant-client/downloads.html
+
+	https://www.youtube.com/watch?v=Sz69kdItkPw
+
+	Manuales paar debian
+
+	https://kiuvox.com/como-instalar-el-instant-client-de-oracle-en-lmde4-o-debian-9/
+
+	https://juanjoselo.wordpress.com/2017/10/25/instalacion-y-configuracion-de-oracle-12c-en-debian-8-jessie/
+
+	https://openbinary20.com/2016/11/10/instalacion-y-configuracion-de-oracle-12c-en-debian-jessie/
+
+	https://jpcarmona.github.io/web/blog/oracleinstall/
+
+	codigorupestre
+
+	service name : ORCLCDB.localdomain
+
+paso 7: Instalar rabbitmq
+
+	docker pull rabbitmq
+
+paso 8: Instalar redis
+
+	docker pull redis
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
