@@ -5,7 +5,10 @@ https://www.youtube.com/watch?v=Y8_OUwAUdnY&feature=youtu.be
 
 
 Paso 1 : Java y Maven
-
+	# Fedora
+	https://tecadmin.net/install-apache-maven-on-fedora/
+	
+	# Debian
 	https://linuxize.com/post/how-to-install-apache-maven-on-debian-10/
 
 	#Imprimir ruta ruta java
@@ -15,21 +18,32 @@ Paso 1 : Java y Maven
 
 Pasos 2: Spring Tool Suite 3
 
-	https://github.com/spring-projects/toolsuite-distribution/wiki/Spring-Tool-Suite-3
+	# Descomprimir la carpeta, mover a /opt y crear un lazador al archivo ejecutable.
+	# /opt/spring-tool-suite-3.9.15.RELEASE-e4.18.0-linux-gtk-x86_64/sts-bundle/sts-3.9.15.RELEASE/STS
 
+	https://github.com/spring-projects/toolsuite-distribution/wiki/Spring-Tool-Suite-3
 
 Pasos 3: Docker
 
 	https://hub.docker.com/
+	
+	# Fedora
+	https://computingforgeeks.com/how-to-install-docker-on-fedora/
 
+	# Debian
 	https://computingforgeeks.com/install-docker-and-docker-compose-on-debian-10-buster/
 	
 
 Paso  4: Configurar la base de datos
+
+	docker login:
+	
+	nombre: ****
+	clave : ****
 	
 	docker pull store/oracle/database-enterprise:12.2.0.1
 
-	docker run -d -p 8081:8081 -p 1521:1521 --name oracle-db store/oracle/database-enterprise:12.2.0.1
+	docker run -d -p 8081:8081 -p 1521:1521 --name oracle-db store/oracle/database-enterprise:12.2.0.1	
 
 	docker exec -it oracle-db bash
 
@@ -60,7 +74,7 @@ Paso  6: Descargar e instalar oracle client 12c
 
 	https://www.youtube.com/watch?v=Sz69kdItkPw
 
-	Manuales paar debian
+	Manuales para debian
 
 	https://kiuvox.com/como-instalar-el-instant-client-de-oracle-en-lmde4-o-debian-9/
 
@@ -83,13 +97,36 @@ paso 8: Instalar redis
 	docker pull redis
 
 
+######################################################################################
+1. Stop all containers
 
+docker stop $(docker ps -q)
 
-	
+ 
 
+2. Force removal of this container
 
-	
+docker rm -f mysql1
 
+ 
+
+3. Clean up the network usage of this container
+
+Format: docker network disconnect --force network mode container name
+
+Example: docker network disconnect --force bridge mysql1
+
+ 
+
+4. Brief check if there is still a container with the same name
+
+Format: docker network inspect network mode
+
+Example: docker network inspect bridge
+
+ 
+
+5. Rebuild the container
 
 
 
