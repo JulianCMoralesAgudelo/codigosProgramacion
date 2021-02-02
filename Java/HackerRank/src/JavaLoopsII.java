@@ -22,30 +22,23 @@ class JavaLoopsII {
 
         for (int i = 0; i < partes.length; i++) {
             lista.add(Integer.parseInt(partes[i]));
-        }       
+        }
 
         int q = lista.get(0);
         int a = lista.get(1);
         int b = lista.get(2);
         int n = lista.get(3);
-        double sum = 0;
-        int base = (int) (a + Math.pow(2, 0) * b);
-        int base_1 = (int) (a + Math.pow(2, 1) * b);
 
         for (int i = 0; i < q; i++) {
-
             for (int j = 0; j <= n; j++) {
-                if (j == 0) {
-                    sum = base;
-                } else if (j == 1) {
-                    sum = base + base_1;
-                } else {
-                    sum = base + base_1 + Math.pow(2, j - 1) * b;
+                a += b;
+                if (j > 0) {
+                    System.out.print(" ");
                 }
-                System.out.print((int) sum + " ");
+                System.out.print(a);
+                b = b * 2;
             }
             System.out.println();
-            sum = 0;
         }
 
     }

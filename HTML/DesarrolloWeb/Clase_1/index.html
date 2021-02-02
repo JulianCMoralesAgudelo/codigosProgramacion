@@ -1,81 +1,102 @@
 <!-- La etiqueta mas importante a nivel de dom ya que se 
     representa el tipo el documento para que el navegador 
     lo interprete como html -->
-<!DOCTYPE html>
 <!-- La etiqueta html es el padre de todas las etiquetas y
 tiene un atributo que es el lenguaje que tiene el documento-->
-<html lang="en">
+
 <!-- La etiqueta head cabecera representa los metadatos
     con que se van a trabajar en el documentos y poscicionar
     en el buscador-->
 
+<!-- La etiqueta charset juego de caracteres de lenguaje-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+
+
 <head>
     <meta charset="UTF-8">
-    <!-- La etiqueta charset juego de caracteres de lenguaje-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum vitae</title>
-    <link rel="shortcut icon" href="../Clase_1/img/favicon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../Clase_1/img/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <header>
-        <figure>
-            <img src="../Clase_1/img/FotoDoc.jpg" alt="Logo JCMA" />
-        </figure>
-        <nav>
+    <header class="header">
+        <nav class="menu">
             <ul>
-                <li><a href="https://www.google.com.co/" target="_blank">Proyectos</a></li>
-                <li><a href="https://www.google.com.co/" target="_blank">Experiencia</a></li>
-                <li><a href="https://www.google.com.co/" target="_blank">Contactame</a></li>
+                <li><a href="#index,html">Inicio</a></li>
+                <li><a href="#proyecto">Proyectos</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#contactame">Contactame</a></li>
             </ul>
         </nav>
     </header>
+
     <section>
-        <h1><span>Julián Camilo Morales Agudelo<br>Tecnólogo en Electrónica</span><br></h1>
-        <p><strong>Poseo experiencia en el cargo de soporte técnico, administración e instalación de sistemas operativos
-                Debian,<br>CentOS, Windows, manejo de bases de datos y consultas enlenguaje SQL, Conocimientos básicos
-                en
-                programación,<br>herramientas de trabajo enofimática y redes, comprensión y redacción en
-                inglés.</strong></p>
+        <h1>Julián Camilo Morales Agudelo></h1>
+        <p><strong>Tecnólogo en Electrónica</strong></p>
+        <p>
+            Tecnólogo en electrónica con cinco años de experiencia en el cargo de soporte técnico, administración e instalación de sistemas operativos Windows y GNU-Linux, sistemas gestores de bases de datos, conocimientos básicos de programación, redes, ofimática,
+            habilidades de comprensión y redacción en inglés, orientación al aprendizaje, al logro, compromiso, proactividad y dinamismo.</em>
+        </p>
+        <figure>
+            <img src="../Clase_1/img/FotoDoc.jpg" alt="foto personal" width="auto" />
+        </figure>
     </section>
-    <h2>Experiencia laboral</h2>
-    <section>
+
+
+    <section id="experiencia">
+        <h2>Experiencia laboral</h2>
         <div>
-            <h3>Itelligent Electronic Solutions: IES Online <a href="https://iesonline.com.co/" target="_blank">Link</a>
-            </h3>
+            <h3>Itelligent Electronic Solutions: IES Online</h3>
+            <p>
+                <a href="https://iesonline.com.co/" target="_blank"><span>https://iesonline.com.co </span></a>
+            </p>
             <h3>Cargo:</h3>
             <p><strong>Tecnico de soporte</strong></p>
             <h3>Funciones:</h3>
-            <p><strong>
-                    Brindar asistencia técnica a la empresa y a los empleados de manera remota vía telefónica o a través
-                    de correo electrónico.
-                    Realizar mantenimiento a los equipos y sistemas informáticos que pudieran presentar fallas.
-                    Realizar Instalación, configuración y actualización del hardware, del software y de los sistemas
-                    operativos requeridos para la funcionalidad de la empresa y la aplicación diseñada por esta .
-                    Realizar Soporte remoto de la aplicación en lenguaje JAVA, al servidor de esta mediante acceso
-                    remoto SSH, VNC, ANYDESK o TEAMVIEWER y mediante consultas SQL.</strong></p>
+            <p>
+                Brindar asistencia técnica a la empresa y a los empleados de manera remota vía telefónica o a través de correo electrónico. Realizar mantenimiento a los equipos y sistemas informáticos que pudieran presentar fallas. Realizar Instalación, configuración
+                y actualización del hardware, del software y de los sistemas operativos requeridos para la funcionalidad de la empresa y la aplicación diseñada por esta . Realizar Soporte remoto de la aplicación en lenguaje JAVA, al servidor de esta mediante
+                acceso remoto SSH, VNC, ANYDESK o TEAMVIEWER y mediante consultas SQL.
+            </p>
         </div>
     </section>
-    <section>
+
+    <section id="proyecto">
         <h2>Proyectos</h2>
-        <div>
-            <h3></h3>
-            <h4>Flutter</h4>
-            <p><strong>Fecha: 20/01/2020</strong></p>
-            <p><a href="#">Proyecto de seguimiento</a></p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nisi vitae nam voluptatem praesentium
-                dolores maiores fuga error! Atque odit ea soluta dignissimos placeat est repellendus, voluptates rem
-                accusantium quidem.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore culpa nostrum
-                vel ab voluptate laudantium neque aliquid fugit dolores excepturi voluptates mollitia veniam molestias,
-                obcaecati repellat cupiditate. Quam, voluptatem quisquam!</p>
-        </div>
-        <figure> <img src="../Clase_1/img/FotoDoc.jpg" alt="Logo JCMA" />
-        </figure>
-
+        <article>
+            <figure> <img src="../Clase_1/img/FotoDoc.jpg" alt="foto personal" /></figure>
+            <div>
+                <h3>Gastronomia</h3>
+                <p><strong>Fecha: 20/01/2020</strong></p>
+                <p><a href="#">Proyecto de seguimiento</a></p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nisi vitae nam voluptatem praesentium dolores maiores fuga error! Atque odit ea soluta dignissimos placeat est repellendus, voluptates rem accusantium quidem. Lorem ipsum
+                    dolor sit amet consectetur, adipisicing elit. Inventore culpa nostrum vel ab voluptate laudantium neque aliquid fugit dolores excepturi voluptates mollitia veniam molestias, obcaecati repellat cupiditate. Quam, voluptatem quisquam!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia dolorum sunt inventore reprehenderit assumenda repellat exercitationem repellendus consectetur maxime aspernatur natus laborum perspiciatis eaque enim cupiditate sint
+                    sit, molestiae ipsam!
+                </p>
+                <input type="submit" value="enviar">
+            </div>
+        </article>
 
     </section>
-    <footer>Pie de pagina</footer>
+
+    <section id="contactame">
+        <h2>Contactame</h2>
+        <form action="">
+            <input type="text" placeholder="Deja tu correo">
+        </form>
+    </section>
+
+
+    <footer>
+        foot
+    </footer>
+
 </body>
 
 </html>

@@ -14,9 +14,7 @@ public class EqualizetheArray {
 
 		for (int i = 0; i < partes.length; i++) {
 			arr[i] = Integer.parseInt(partes[i]);
-		}
-
-		int count = 0;
+		}		
 
 		Set<Integer> lista = new LinkedHashSet<>();
 
@@ -33,7 +31,7 @@ public class EqualizetheArray {
 		}
 
 		System.out.println(
-				"\nMínimo numero de elementos a eliminar para que todos los elementos de la matriz sean iguales ");
+				"\nMï¿½nimo numero de elementos a eliminar para que todos los elementos de la matriz sean iguales ");
 		System.out.println(lista.size());
 
 	}

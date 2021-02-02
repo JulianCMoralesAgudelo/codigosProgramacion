@@ -1,9 +1,7 @@
 //package kackerrank;
 
-import java.awt.font.NumericShaper;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Scanner;
 
@@ -42,10 +40,10 @@ class Result {
 }
 
 /*
- * Si la diferencia entre la calificación y el siguiente múltiplo de 5 es menor
- * que, 3 redondea la calificación hasta el siguiente múltiplo de 5. Si el valor
- * de la calificación es inferior a 38, no se produce redondeo ya que el
- * resultado seguirá siendo una calificación reprobatoria.
+ * Si la diferencia entre la calificaciï¿½n y el siguiente mï¿½ltiplo de 5 es menor
+ * que, 3 redondea la calificaciï¿½n hasta el siguiente mï¿½ltiplo de 5. Si el valor
+ * de la calificaciï¿½n es inferior a 38, no se produce redondeo ya que el
+ * resultado seguirï¿½ siendo una calificaciï¿½n reprobatoria.
  * 
  */
 

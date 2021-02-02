@@ -1,0 +1,16 @@
+/* Selector de etiqueta */
+
+.header {
+    background-attachment: blue;
+}
+
+
+/* Selector decendente
+
+Elemento hijo de otro selector de etiqueta
+
+*/
+
+header nav ul li a {
+    color: black
+}
