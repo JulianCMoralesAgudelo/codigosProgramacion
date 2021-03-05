@@ -1,6 +1,7 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
 
+
 <<'MULTILINE-COMMENT'
 Script          : gitCommit.sh
 Autor           : Julián Camilo Morales Agudelo <juliancmorales10@gmail.com>
@@ -12,6 +13,10 @@ Sugerencias     : Hacer ejecutable y mover a la carpeta /bin, modificar la carpe
 MULTILINE-COMMENT
 
 clear
+
+git config --global user.email "juliancmorales10@gmail.com"
+git config --global user.name "julian"
+
 
 ######################################################################################################################################################################################
 while true; do
