@@ -306,7 +306,7 @@ sleep 1
 sudo service vsftpd start
 echo "$(tput setaf 3)$(tput setab 0)$(tput bold)Por favor edite el archivo de configuración para vsftpd --> vsftpd.conf$(tput sgr 0)"
 sleep 1
-sudo geditvi 
+sudo gedit  
 echo "pasv_min_port=30300"  | sudo tee --append /etc/vsftpd.conf
 echo "pasv_max_port=30309"  | sudo tee --append /etc/vsftpd.conf
 echo 'seccomp_sandbox=NO' >> /etc/vsftpd.conf 
