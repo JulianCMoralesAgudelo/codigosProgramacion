@@ -28,16 +28,16 @@ def adivinaNumeroComputadora(x):
             prediccion = random.randint(limiteInferior, limiteSuperior)
         else:
             prediccion = limiteSuperior
-    # Respuesta
+        # Respuesta
         respuesta = input(
-            f"Mi prediccion es {prediccion} Si es muy alta, ingresa (A). Si es muy baja ingresa (B). SI es correcta ingresa (C): ").lower()
+            f"Mi prediccion es {prediccion} Si es muy alta, ingresa (A). Si es muy baja ingresa (B). Si es correcta ingresa (C): ").lower()
 
         if respuesta == "a":
             limiteSuperior = prediccion - 1
         elif respuesta == "b":
-            limiteInferior = prediccion + 1        
+            limiteInferior = prediccion + 1
     print(
-    f"La computadora adivino tu numero {prediccion}. ")
+        f"La computadora adivino tu numero {prediccion}. ")
 
 
 adivinaNumeroComputadora(10)
