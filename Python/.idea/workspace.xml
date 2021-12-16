@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="778aa4c8-f4ef-4afe-8b93-5bdc7bb08c6f" name="Changes" comment="Ahorcado">
-      <change afterPath="$PROJECT_DIR$/Varios/busquedabinaria.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Varios/busquedabinaria.py" beforeDir="false" afterPath="$PROJECT_DIR$/Varios/busquedabinaria.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +124,7 @@
       <workItem from="1639451479393" duration="3000" />
       <workItem from="1639451502763" duration="2874000" />
       <workItem from="1639537547811" duration="4614000" />
-      <workItem from="1639622104352" duration="411000" />
+      <workItem from="1639622104352" duration="906000" />
     </task>
     <task id="LOCAL-00001" summary="Puiedra papel o tijera python">
       <created>1639454303115</created>

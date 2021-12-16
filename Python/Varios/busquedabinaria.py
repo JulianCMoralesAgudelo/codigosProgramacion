@@ -18,6 +18,10 @@ def busqueda_lineal(lista,objetivo):
             return i
     return -1
 
+def busqueda_binaria(lista,objetivo,limite_inferir=None,limite_superir=None):
+    
+
+
 lista = [1,3,5,10,12]
 
 print(busqueda_lineal(lista,10))
