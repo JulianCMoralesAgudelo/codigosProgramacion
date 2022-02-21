@@ -1,0 +1,80 @@
+1.- Actualizar Sistema Operativo Base
+«sudo apt update; sudo update-apt-xapian-index; sudo aptitude safe-upgrade; sudo apt install -f; sudo dpkg --configure -a; sudo apt --fix-broken install»
+
+«sudo update-grub; sudo update-grub2; sudo aptitude clean; sudo aptitude autoclean; sudo apt-get autoremove; sudo apt autoremove; sudo apt purge; sudo apt remove»
+
+2.- Paquetería completa para XFCE
+«sudo apt install xfce4-appfinder xfce4-appmenu-plugin xfce4-battery-plugin xfce4-clipman xfce4-clipman-plugin xfce4-cpufreq-plugin xfce4-cpugraph-plugin xfce4-datetime-plugin xfce4-dict xfce4-diskperf-plugin xfce4-docklike-plugin xfce4-dxreminders-plugin xfce4-eyes-plugin xfce4-fsguard-plugin xfce4-genmon-plugin xfce4-panel xfce4-helpers xfce4-indicator-plugin xfce4-mailwatch-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-multiload-ng-plugin xfce4-netload-plugin xfce4-notes xfce4-notes-plugin xfce4-notifyd xfce4-places-plugin xfce4-power-manager xfce4-power-manager-data xfce4-power-manager-plugins xfce4-pulseaudio-plugin xfce4-screenshooter xfce4-sensors-plugin xfce4-session xfce4-settings xfce4-smartbookmark-plugin xfce4-sntray-plugin xfce4-sntray-plugin-common xfce4-statusnotifier-plugin xfce4-systemload-plugin xfce4-taskmanager xfce4-terminal xfce4-timer-plugin xfce4-verve-plugin xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xapp-status-plugin xfce4-xkb-plugin»
+
+3.- Paquetería completa de MX-Linux 21 con XFCE/FluxBox
+«sudo apt install mx21-artwork mx-apps mx-apps-fluxbox mx-boot-options mx-bootrepair mx-cleanup mx-codecs mx-comfort-themes mx-conky mx-conky-data mx-datetime mx-debian-firmware mx-dockmaker mx-docs mxfb-accessories mxfb-art mxfb-docs mxfb-goodies mx-fluxbox mx-fluxbox-about mx-fluxbox-data mx-goodies mx-gpg-keys mx-greybird-themes mx-icons-start mx-idesktool mx-idevice-mounter mx-installer mx-iphone mx-iso-template mx-live-usb-maker mx-menu-editor mx-network-assistant mx-packageinstaller mx-packageinstaller-pkglist mx-pkexec mx-remaster mx-remastercc mx-repo-list mx-repo-manager mx-select-sound mx-snapshot mx-sound-theme-borealis mx-sound-theme-fresh-and-clean mx-system mx-system-sounds mx-tools mx-tour mx-tweak mx-tweak-data mx-usb-unmounter mx-user mx-viewer mx-welcome mx-welcome-data fbpager fbautostart»
+
+4.- Paquetería de Juegos básicos de GNOME compatibles con XFCE
+«sudo apt install gnome-games gnome-games-app game-data-packager game-data-packager-runtime gnome-cards-data games-adventure games-arcade games-board games-card games-chess games-console games-education games-emulator games-finest games-fps games-minesweeper games-mud games-platform games-programming games-puzzle games-racing games-rogue games-rpg games-shootemup games-simulation games-sport games-strategy games-tetris games-tasks games-thumbnails games-toys games-typing»
+
+5.- Paquetería de Juegos variados extras para Linux
+«sudo apt install 0ad 7kaa a7xpg abe ace-of-penguins alex4 armagetronad asc atomix bastet berusky biniax2 blobby bloboats blobwars blockattack bsdgames btanks burgerspace bzflag-client caveexpress cgoban chromium-bsu cultivation dreamchess empire enigma epiphany extremetuxracer flare-game flightgear foobillardplus freeciv freecol freedroidrpg freeorion frozen-bubble funguloids funnyboat gnubg gtkatlantic hedgewars holotz-castle hyperrogue kobodeluxe koules lincity-ng liquidwar lmemory lugaru manaplus marsshooter megaglest micropolis minetest nethack-console nettoe neverball neverputt nexuiz numptyphysics open-invaders openarena openclonk openttd pacman parsec47 pathological performous pinball pingus pioneers pokerth powermanga pybik pysolfc raincat redeclipse ri-li scorched3d searchandrescue sgt-puzzles solarwolf sopwith springlobby supertransball2 supertux supertuxkart tecnoballz teeworlds torcs torus-trooper tuxfootball tuxmath tuxpuck ufoai unknown-horizons warmux warzone2100 wesnoth widelands xmoto freesweep xbomb xdemineur angrydd blockout2 crack-attack cuyo flobopuyo freealchemist galois gemdropx gtetrinet ltris netris petris quadrapassel stax tetrinet-client tetrinetx tint vitetris xbubble xwelltris»
+
+6.- Paquetería básica adicional
+«sudo apt install neofetch lolcat toilet figlet tasksel tasksel-data»
+
+
+A.- Soporte de vídeo
+«sudo apt install xserver-xorg-video-all libva-drm2 libva-glx2 libva-wayland2 libva-x11-2 libva2»
+
+B.- Soporte de audio
+sudo apt install alsa-firmware-loaders alsa-oss alsa-tools alsa-utils alsamixergui volumeicon-alsa paprefs pavumeter pulseaudio-utils ffmpeg2theora sound-icons lame libdvdnav4 libdvdread8 libfaac0 libmad0 libmp3lame0 libquicktime2 libstdc++5 libxvidcore4 twolame vorbis-tools x264 gstreamer1.0-alsa gstreamer1.0-adapter-pulseeffects gstreamer1.0-autogain-pulseeffects gstreamer1.0-convolver-pulseeffects gstreamer1.0-crystalizer-pulseeffects gstreamer1.0-espeak gstreamer1.0-fdkaac gstreamer1.0-gl gstreamer1.0-nice gstreamer1.0-pipewire gstreamer1.0-x gstreamer1.0-plugins-bad gstreamer1.0-plugins-bad-apps gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-rtp gstreamer1.0-plugins-ugly gstreamer1.0-pocketsphinx gstreamer1.0-pulseaudio gstreamer1.0-tools gstreamer1.0-vaapi gstreamer1.0-wpe
+
+C.- Soporte de equipos de impresión y digitalización de imágenes
+sudo apt install cups cups-backend-bjnp cups-browsed cups-bsd cups-client cups-common cups-core-drivers cups-daemon cups-ipp-utils cups-filters cups-pdf cups-ppdc cups-server-common printer-driver-cups-pdf printer-driver-hpcups python3-cups python3-cupshelpers foomatic-db-compressed-ppds foomatic-db-engine ghostscript-x gocr-tk gutenprint-locales hannah-foo2zjs hpijs-ppds hplip openprinting-ppds printer-driver-all printer-driver-cups-pdf printer-driver-foo2zjs printer-driver-hpcups printer-driver-hpijs libtk8.6 tk tk8.6 xli xsane printer-driver-fujixerox printer-driver-indexbraille printer-driver-oki avahi-utils colord flex g++ libtool sane sane-utils system-config-printer system-config-printer-udev unpaper xsane xsltproc
+
+D.- Soporte ofimático
+sudo apt install fonts-arabeyes fonts-cantarell fonts-freefarsi fonts-liberation fonts-lyx fonts-mathjax fonts-oflb-asana-math fonts-opensymbol fonts-sil-gentium fonts-stix myspell-es ooo-thumbnailer xfonts-intl-arabic xfonts-intl-asian xfonts-intl-chinese xfonts-intl-chinese-big xfonts-intl-european xfonts-intl-japanese xfonts-intl-japanese-big ttf-aenigma ttf-ancient-fonts ttf-anonymous-pro ttf-bitstream-vera ttf-summersby ttf-ubuntu-font-family libreoffice libreoffice-dmaths libreoffice-gnome libreoffice-gtk3 libreoffice-help-es libreoffice-java-common libreoffice-l10n-es libreoffice-report-builder-bin libreoffice-style-breeze libreoffice-style-colibre libreoffice-style-elementary libreoffice-style-sifr libreoffice-texmaths pdfarranger pdfshuffler pdftk
+
+E.- Soporte de compatibilidad con HW y SW de Windows
+«sudo apt install cifs-utils dosfstools exfat-fuse exfat-utils fuse3 hfsplus hfsutils hfsutils-tcltk icoutils ideviceinstaller ipheth-utils libsmbclient mtools ntfs-3g smbclient samba-common smbnetfs samba samba-common-bin»
+
+F.- Gestión y monitorización del Hardware general
+«sudo apt install acpi acpitool acpi-support fancontrol firmware-linux-free hardinfo hwdata hwinfo irqbalance iucode-tool laptop-detect lm-sensors lshw lsscsi smartmontools xsensors intel-microcode amd64-microcode»
+
+«sensors-detect
+chmod u+s /usr/sbin/hddtemp
+hddtemp /dev/sda»
+G.- Gestión del Hardware de conectividad
+WiFi
+
+«sudo apt install wifi-radar wireless-tools wpagui wpasupplicant
+sudo apt install wifi-qr wireless-tools wpagui wpasupplicant zbarcam-qt zbarcam-gtk
+sudo apt install firmware-atheros
+sudo apt install firmware-b43-installer firmware-b43legacy-installer firmware-bnx2 firmware-bnx2x firmware-brcm80211
+sudo apt install firmware-intelwimax firmware-iwlwifi
+sudo apt install firmware-ralink firmware-realtek»
+Bluetooth a dispositivos
+
+«sudo apt install bluetooth bluez bluez-cups bluez-firmware bluez-tools btscanner gnome-bluetooth pulseaudio-module-bluetooth»
+
+USB a Internet
+
+«sudo apt install mobile-broadband-provider-info modemmanager modem-manager-gui modem-manager-gui-help usb-modeswitch usb-modeswitch-data wvdial»
+
+Dispositivos multimedia móviles
+
+«sudo apt install gtkpod libgpod-common libgpod-cil libgpod4 libmtp-runtime mtp-tools faad mp3gain»
+
+H.- Paquetería básica para la gestión de compresión/descompresión de archivos
+«sudo apt install arj bzip2 gzip lhasa liblhasa0 lzip lzma p7zip p7zip-full p7zip-rar sharutils rar unace unar unrar unrar-free tar unzip xz-utils zip»
+
+I.- Paquetería extra para la gestión de actividades vía Interfaz de Terminal (CLI)
+«sudo apt install alien curl debian-keyring debian-archive-keyring htop lynx net-tools nmap rpm rpm-i18n screen ssh testdisk w3m w3m-img»
+
+J.- Paquetería extra para la gestión de actividades vía Interfaz de Gráfica (GUI)
+«sudo apt install alacarte baobab bleachbit brasero brasero-cdrkit camera.app cdrskin cheese converseen dcraw dvd+rw-tools dvdauthor evince ffmpegthumbnailer file-roller gdebi gedit gedit-plugins gimp gimp-gmic gimp-data-extras gimp-gap gimp-gutenprint gimp-plugin-registry gimp-help-es gnome-disk-utility gnome-orca gparted gphoto2 gpicview gufw imagination kodi libdvdread8 libdvdnav4 libxm4 lightdm-gtk-greeter-settings lsb-release lsdvd menu-l10n menulibre mirage onboard pitivi ooo-thumbnailer plymouth plymouth-themes plymouth-x11 rhythmbox rhythmbox-plugins rhythmbox-plugin-cdrecorder software-properties-gtk seahorse simple-scan shotwell software-properties-gtk sound-juicer synaptic thunderbird thunderbird-l10n-es-es totem totem-plugins update-notifier vlc vlc-plugin-notify vokoscreen xarchiver xscreensaver librecad»
+
+Paquetería para el soporte avanzado del Sistema Operativo
+Esto incluye paquetes (programas, utilitarios y bibliotecas) para facilitar el trabajo de usuarios especializados, en los ámbitos Multimedia, Juegos, Desarrollo y Servidores.
+
+«sudo apt install autoconf automake build-essential dkms fastjar g++ gawk gcc gcc-multilib gettext gettext-base intltool intltool-debian jarwrapper linux-headers-$(uname -r) mawk mesa-common-dev minizip nasm perl perl-base perl-modules-5.32 pkg-config python-apt-common subversion wx-common wx3.0-headers zlib1g»
+
+«sudo apt install libalien-wxwidgets-perl libc6 libcurl3-gnutls libgcc1 libgl1-mesa-dev libglade2-0 libglib2.0-0 libglib2.0-bin libglib2.0-data libglibmm-2.4-1v5 libgtk2.0-0 libgtk2.0-bin libgtk2.0-common libguichan-sdl-0.8.1-1v5 liblocale-gettext-perl libpcre16-3 libmodule-pluggable-perl libpng16-16 libsdl-perl libsdl2-2.0-0 libstdc++6 libtool libvorbisenc2 libwx-perl libxcb-xtest0 libxcb-xv0 libxml2 libxml2-utils libxv1 libxvmc1 libxxf86vm-dev debhelper devhelp debmake libpng-tools anjuta»
+
+«sudo apt install libbz2-dev libcdio-cdda-dev libcdio-dev libcdio-paranoia-dev libgl1-mesa-dev libglade2-dev libglib2.0-dev libglibmm-2.4-dev libglu1-mesa-dev libgmp3-dev libgtk-3-dev libgtk2.0-dev libjack-jackd2-dev libsdl-console-dev libsdl-gfx1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-net1.2-dev libsdl-ocaml-dev libsdl-pango-dev libsdl-perl libsdl-sge-dev libsdl-sound1.2-dev libsdl-ttf2.0-dev libsdl1.2-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev libsigc++-2.0-dev libsndfile1-dev libwxbase3.0-dev libxml2-dev libxtst-dev libxv-dev libxxf86vm-dev zlib1g-dev x11proto-record-dev»

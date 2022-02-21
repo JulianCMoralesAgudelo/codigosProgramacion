@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*- 
 '''
 Script          : 
@@ -8,6 +8,7 @@ Modificado      : 2021-01-22
 Documentación   :
 Descripcion     : 
 '''
+# Importar librerias
 
 # Declaracion e inicializacion de variables 
 

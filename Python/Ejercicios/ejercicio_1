@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
+'''
+Script          : Ejercicio 1: Obtener la Version de Python Instalada en Nuestro Sistema
+Autor           : Julián Camilo Morales Agudelo <juliancmorales10@gmail.com>
+Versión         : 1.0
+Modificado      : 06-02-2022
+Documentación   : https://www.youtube.com/watch?v=rbH5HJ9IOTA&list=PL2PZw96yQChwNxk7f8stySXf7Cic8oQk8&index=1
+Descripcion     : 
+'''
+# Importar librerias
+
+import sys
+
+# Declaracion e inicializacion de variables 
+
+
+# lectura de datos
+
+
+
+# Manipulacion de datos
+
+
+
+# Presentacion de datos.
+
+print(sys.version)
+print(sys.version_info)
+
+# sys.version_info(major=3, minor=10, micro=1, releaselevel='final', serial=0)
