@@ -14,4 +14,12 @@ import os
 
 configparser.__name__
 
+# Declaracion de funciones
+
+# Borrar pantalla
+def borrarPantalla():  # Definimos la función estableciendo el nombre que queramos
+    if os.name == "posix":
+        os.system("clear")
+    elif os.name == "ce" or os.name == "nt" or os.name == "dos":
+        os.system("cls")
 

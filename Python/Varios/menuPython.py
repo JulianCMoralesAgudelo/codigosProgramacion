@@ -28,7 +28,7 @@ SALIR = 0
 datos = []
 
 # Declaracion de funciones
-
+# Borrar pantalla
 
 def borrarPantalla():  # Definimos la función estableciendo el nombre que queramos
     if os.name == "posix":
