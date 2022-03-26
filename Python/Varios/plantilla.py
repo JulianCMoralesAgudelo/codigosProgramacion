@@ -1,24 +1,17 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- 
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 '''
 Script          : 
 Autor           : Julián Camilo Morales Agudelo <juliancmorales10@gmail.com>
 Versión         : 1.0
-Modificado      : 2021-01-22
-Documentación   :
+Modificado      : 2022-03-07
+Documentación   : 
 Descripcion     : 
 '''
 # Importar librerias
+import configparser
+import os
 
-# Declaracion e inicializacion de variables 
-
-
-# lectura de datos
-
+configparser.__name__
 
 
-# Manipulacion de datos
-
-
-
-# Presentacion de datos.

@@ -7,4 +7,6 @@ import getpass
 usuario = getpass.getuser()
 
 # Permite introducir una contraseña (no visible)
-password = getpass.g
+password = getpass.getpass()
+
+print(usuario, password)
