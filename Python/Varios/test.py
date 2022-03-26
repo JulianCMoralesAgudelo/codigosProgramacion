@@ -1,12 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# Python code below
+# Use print("messages...") to debug your solution.
 
-import getpass
+def find_largest(numbers):
+    # Your code goes here
+    return max(numbers)
 
-# Captura usuario actual del sistema
-usuario = getpass.getuser()
-
-# Permite introducir una contraseña (no visible)
-password = getpass.getpass()
-
-print(usuario, password)
+print(find_largest([1, -28, 88, 200, 7]))  # 200
