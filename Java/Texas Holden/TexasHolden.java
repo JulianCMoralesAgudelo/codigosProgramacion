@@ -19,7 +19,7 @@ public class TexasHoldem {
 
 	// Ranking de combinaciones
 	// Escalera Real son 10,J,Q,K,A 
-    // Escalera de color 5 cartas diferentes a la escalera real.
+    	// Escalera de color 5 cartas diferentes a la escalera real.
 	// Poker 4 cartas del mismo numero, el ganador lo define la carta de mayor valor.
 	// Full house tres cartas de igual valor y dos de igual valor pero distintas al trio, el ganador lo define las cartas de mayor valor.
 	// Color son 5 cartas del mismo palo sin importar los colores, gana la carta mas alta.
