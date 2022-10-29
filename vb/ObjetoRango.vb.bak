@@ -12,7 +12,7 @@ Range("A5:A14").Select
 'Selecciona celdas individuales no contiguas mencionadas'
 Range("A5,B7,C9").Select
 
-'Selecciona un rango formado por subrangos de celdas'
+'Selecciona un ranfo formado por subrangos de celdas'
 Range("A5:B5,A7:C7,A9:C10").Select
 
 End Sub
