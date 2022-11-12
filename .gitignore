@@ -44,3 +44,7 @@ gradle-app.setting
 !gradle-wrapper.jar
 # Cache of project
 .gradletasknamecache
+
+# file: ~/.gitignore_global
+.DS_Store
+.idea
