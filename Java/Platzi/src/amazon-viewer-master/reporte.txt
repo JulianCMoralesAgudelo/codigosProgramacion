@@ -1,0 +1,25 @@
+:: VISTOS ::
+
+Title: Coco
+Genre: Animación
+Year: 2017
+Creator: Pixart
+Duration: 120
+
+Title: Avatar
+Genre: Ficción
+Year: 2009
+Creator: James Cameron
+Duration: 161
+
+Title: Amélie
+Genre: Romance
+Year: 2001
+Creator: Jean-Pierre Jeunet
+Duration: 123
+
+Title: Sombra del Agua
+Genre: Drama-Fantasía
+Year: 2017
+Creator: Guillermo del Toro
+Duration: 123
