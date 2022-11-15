@@ -13,11 +13,11 @@ tar -zxf jdk-8u211-linux-x64.tar.gz -C /usr/lib/jvm
 #ls /usr/lib/jvm
 
 #update alternatives so the command java point to the new jdk 
-update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-8-oracle/bin/java 100
+update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-17.0.5 100
 
 
 #update alternatives so the command javac point to the new jdk 
-sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-8-oracle/bin/javac 100
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-17.0.5 100
 
 update-alternatives --display java
 

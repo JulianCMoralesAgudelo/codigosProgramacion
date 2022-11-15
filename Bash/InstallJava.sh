@@ -6,23 +6,23 @@ sudo rm openjdk-11+28_linux-x64_bin.tar.gz
 
 #***************************************** Asignar Java por defecto ***********************************************************
 
-sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.8.0_212/bin/java" 1
-sudo update-alternatives --set java "/usr/lib/jvm/jdk1.8.0_212/bin/java"
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk-17.0.5" 1
+sudo update-alternatives --set java "/usr/lib/jvm/jdk-17.0.5"
 
 
 
-sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/java-11-openjdk-amd64/bin/java" 1
-sudo update-alternatives --set java "/usr/lib/jvm/jdk1.8.0_111/bin/java"
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk-17.0.5" 1
+sudo update-alternatives --set java "/usr/lib/jvm/jdk-17.0.5"
 
 
-sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jdk-11/bin/java" 1
-sudo update-alternatives --set java "/usr/lib/jvm/jdk-11/bin/java"
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk-17.0.5" 1
+sudo update-alternatives --set java "/usr/lib/jvm/jdk-17.0.5"
 
 
 sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk1.8.0_111/bin/jar 2
-sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_111/bin/javac 2
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-17.0.5c 2
 sudo update-alternatives --set jar /usr/lib/jvm/jdk1.8.0_111/bin/jar
-sudo update-alternatives --set javac /usr/lib/jvm/jdk1.8.0_111/bin/javac
+sudo update-alternatives --set javac /usr/lib/jvm/jdk-17.0.5c
 
 
 sudo rm -rf /usr/lib/jvm/*
@@ -33,9 +33,9 @@ sudo  rm jdk-7u80-linux-i586.tar.gz
 
 #***************************************** Asignar Java por defecto ***********************************************************
 
-sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0_80/bin/java" 1
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/java-11-openjdk-amd64" 1
 
-sudo update-alternatives --set java "/usr/lib/jvm/jdk1.7.0_80/bin/java"
+sudo update-alternatives --set java "/usr/lib/jvm/java-11-openjdk-amd64" 
 
 
 sudo update-alternatives --config java
@@ -58,7 +58,7 @@ sudo ln -s /opt/sts-bundle/ /usr/local/bin/sts
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:jre/bin/java::")
 
-echo JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/ >> .bashrc
+echo JAVA_HOME=/usr/lib/jvm//usr/lib/jvm/java-11-openjdk-amd64/ >> .bashrc
 
 
 setx -m JAVA_HOME "g:\JDK\OpenJDK\jdk-11.0.2"
