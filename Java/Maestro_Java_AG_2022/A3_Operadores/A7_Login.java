@@ -14,13 +14,14 @@ public class A7_Login {
         String u = in.nextLine();
 
         System.out.print("\nIngrese el password: ");
+        
         String p = in.nextLine();
 
         boolean isAuthenticated = false;
 
         do {
             if (username.equals(u) && password.equals(p)) {
-                System.out.println("Bienvenido al sistema señor@ ".concat(u).concat("!"));
+                System.out.println("\nBienvenido al sistema señor@ ".concat(u).concat("!"));
                 isAuthenticated = true;
             } else {
                 System.out.println("\nDatos incorrectos");
@@ -30,12 +31,8 @@ public class A7_Login {
                 String r = in.nextLine();
 
                 if (r.equalsIgnoreCase("s")) {
-
-                    System.out.print("\nIngrese el username: ");
-                    u = in.nextLine();
-
-                    System.out.print("\nIngrese el password: ");
-                    u = in.nextLine();
+                    r = in.nextLine();
+                    main(args);
 
                 } else {
                     System.out.println("Hasta pronto");
