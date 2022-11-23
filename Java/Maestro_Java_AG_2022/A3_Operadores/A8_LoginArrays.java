@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class A7_Login {
+public class A8_LoginArrays {
 
     public static void main(String[] args) {        
 
