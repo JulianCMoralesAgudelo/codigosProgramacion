@@ -1,4 +1,4 @@
-package variables;
+package A1_Variables;
 
 public class A8_ConversionDeTipos {
     public static void main(String[] args) {

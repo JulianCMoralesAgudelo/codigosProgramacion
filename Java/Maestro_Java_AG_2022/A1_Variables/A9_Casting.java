@@ -1,4 +1,4 @@
-package variables;
+package A1_Variables;
 
 public class A9_Casting {
     public static void main(String[] args) {

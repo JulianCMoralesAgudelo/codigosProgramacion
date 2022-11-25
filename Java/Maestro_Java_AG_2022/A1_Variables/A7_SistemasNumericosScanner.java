@@ -1,4 +1,4 @@
-package variables;
+package A1_Variables;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

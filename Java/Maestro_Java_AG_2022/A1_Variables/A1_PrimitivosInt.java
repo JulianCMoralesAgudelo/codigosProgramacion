@@ -1,4 +1,4 @@
-package variables;
+package A1_Variables;
 
 public class A1_PrimitivosInt {
     public static void main(String[] args) {
