@@ -1,5 +1,3 @@
-package A4_FlujosDeControl;
-
 public class A1_SentenciaIfElse {
 
     public static void main(String[] args) {
@@ -25,9 +23,9 @@ public class A1_SentenciaIfElse {
         } else if (promedio >= 5.5) {
             System.out.println("\nBuen promedio!");
         } else if (promedio >= 5.0) {
-            System.out.println("\nRegular, neceitas esforzarte un poco mas!");
+            System.out.println("\nRegular, necesitas esforzarte un poco mas!");
         } else if (promedio >= 4.0) {
-            System.out.println("\nInsuficiente, neceitas esforzarte un poco mas!");
+            System.out.println("\nInsuficiente, necesitas esforzarte un poco mas!");
         } else {
             System.out.println("\nReprobado!");
         }
