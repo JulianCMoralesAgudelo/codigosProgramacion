@@ -1,0 +1,101 @@
+https://www.nagios.org/downloads/nagios-core/
+
+No todo el software que necesitamos se encuentra en los repositorios. Debido a esto, algunas veces debemos descargar el software, realizar un proceso de descompresión y desempaquetado para finalmente instalar la herramienta.
+
+Instalación de algunas herramientas para manejar una base de datos MySQL (recuerda que instalaremos y trabaremos con MySQL en una próxima clase):
+
+sudo apt install build-essential libgd-dev openssl libssl-dev unzip apache2 php gcc libdbi-perl libdbd-mysql-perl wget curl
+
+sudo make install-groups-users
+sudo usermod -a -G nagios www-data
+
+Instalación de Nagios:
+
+wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.9.tar.gz -O nagioscore.tar.gz
+
+Descomprimir y desempaquetar archivos con tar:
+
+tar xvzf nagioscore.tar.gz
+
+Este comando creará una carpeta nagios-4.4.4. El nombre de la carpeta puede variar dependiendo de la versión que descargaste. Entrando a esta carpeta podemos ejecutar diferentes archivos y comandos para configurar el software y realizar la instalación.
+
+# 1:
+sudo ./configure --with-https-conf=/etc/apache2/sites-enabled
+# 2:
+sudo make all
+# 3:
+sudo make install
+# 4:
+sudo make install-init
+# 5:
+sudo make install-commandmode
+# 6:
+sudo make install-config
+#7:
+sudo make install-webconf
+
+Por último, para administrar el servicio de nagios podemos usar el comando sudo systemctl (status, start, restart, reload, stop, enable, disable, list-dependencies) nagios.
+
+Lecturas recomendadas
+
+Nagios - The Industry Standard In IT Infrastructure Monitoring
+
+https://www.nagios.org
+
+https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.4.tar.gz
+
+https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.4.tar.gz
+
+https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz
+
+https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz
+
+Docker
+
+# Descargar contenedor
+docker pull jasonrivers/nagios:latest
+
+# Ejecutar
+
+docker run --name nagios4 -p 0.0.0.0:8080:80 jasonrivers/nagios:latest
+
+alternatively you can use external Nagios configuration & log data with the following:
+
+docker run --name nagios4  \
+  -v /path-to-nagios/etc/:/opt/nagios/etc/ \
+  -v /path-to-nagios/var:/opt/nagios/var/ \
+  -v /path-to-custom-plugins:/opt/Custom-Nagios-Plugins \
+  -v /path-to-nagiosgraph-var:/opt/nagiosgraph/var \
+  -v /path-to-nagiosgraph-etc:/opt/nagiosgraph/etc \
+  -p 0.0.0.0:8080:80 jasonrivers/nagios:latest
+  
+# Ejecutar
+docker run --name nagios -dp 8080:80 jasonrivers/nagios
+
+# Docker compose
+
+---
+
+# This compose file acts as an example on using docker volumes for nagios
+# configuration. As nagios configurations are different for each site they are
+# not considered part of the container image. The best way to deal with the
+# configurations is to store them in a volume allowing the user to upgrade the
+# image without the need to extract the site configuration from the container.
+
+version: '3'
+services:
+  nagios:
+    image: jasonrivers/nagios:latest
+    volumes:
+    - nagiosetc:/opt/nagios/etc
+    - nagiosvar:/opt/nagios/var
+    - customplugins:/opt/Custom-Nagios-Plugins
+    - nagiosgraphvar:/opt/nagiosgraph/var
+    - nagiosgraphetc:/opt/nagiosgraph/etc
+
+volumes:
+    nagiosetc:
+    nagiosvar:
+    customplugins:
+    nagiosgraphvar:
+    nagiosgraphetc:
