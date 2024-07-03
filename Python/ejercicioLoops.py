@@ -11,8 +11,16 @@
 
 # Lista de datos
 num_list = [33,42,5,66,77,22,16,79,36,62,78,43,88,39,53,67,89,11]
+# Variable para contar el número de elementos iterados
+count = 0
 
-# Bucle for
+# Bucle for con enumerar para obtener el índice
+for x,num in enumerate(num_list):
+    # Incrementar el contador
+    count += 1
+        # Condición para números mayores que 45
+    if num == 36:
+        print('Number found at ', x)
+        break
 
-for i in num_list:
-    print(i);
+print(count)
