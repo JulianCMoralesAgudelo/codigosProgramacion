@@ -1,0 +1,15 @@
+=== Instalación ===
+Ten en cuenta que el fichero descargado es de tipo ZIP y es necesario descomprimirlo 
+para poder usar su contenido en Jupyter Notebook.
+
+=== Importante en Ubuntu ===
+
+Si no funciona el acceso directo deberás darle permisos de ejecución desde una 
+terminal mediante este comando estando en el directorio CursoPyton: 
+
+cd /ruta/al/directorio/CursoPython
+chmod +x Notebook.sh
+
+=== Apuntes online ===
+Todos estos apuntes están disponibles de forma online en mi archivo de documentos:
+https://docs.hektorprofe.net/python/
