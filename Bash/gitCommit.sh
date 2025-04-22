@@ -1,102 +1,90 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
 
-
 <<'MULTILINE-COMMENT'
 Script          : gitCommit.sh
-Autor           : Julián Camilo Morales Agudelo <juliancmorales10@gmail.com>
-Versión         : 1.0
-Modificado      : 2021-01-08
-Documentación   : https://codigofacilito.com/articulos/buenas-practicas-en-commits-de-git
-Descripcion     : Buenas Practicas en Commits de Git
-Sugerencias     : Hacer ejecutable y mover a la carpeta /bin, modificar la carpeta del repositorio.
+Autor           : Julián Camilo Morales Agudelo
+Versión         : 2.0
+Modificado      : 2025-04-22
+Descripcion     : Realizar commits siguiendo la convención Conventional Commits
 MULTILINE-COMMENT
 
 clear
 
-git config --global user.email "juliancmorales10@gmail.com"
-git config --global user.name "julian"
+# Config global (solo si no está seteado)
+git config --global user.email >/dev/null || git config --global user.email "juliancmorales10@gmail.com"
+git config --global user.name >/dev/null || git config --global user.name "julian"
 
+# Opciones de tipo de commit
+echo "Seleccione el tipo de commit:"
+echo ""
+echo "1. feat      → Nueva funcionalidad"
+echo "2. fix       → Corrección de errores"
+echo "3. docs      → Cambios en documentación"
+echo "4. style     → Formato (espacios, comas, etc)"
+echo "5. refactor  → Refactorización de código"
+echo "6. test      → Añadir o modificar pruebas"
+echo "7. chore     → Mantenimiento, tareas menores"
+echo "8. perf      → Mejora de rendimiento"
+echo "9. ci        → Cambios en CI/CD"
 
-######################################################################################################################################################################################
+read -p "Ingrese el número del tipo: " opcion
+
+case $opcion in
+    1) type="feat" ;;
+    2) type="fix" ;;
+    3) type="docs" ;;
+    4) type="style" ;;
+    5) type="refactor" ;;
+    6) type="test" ;;
+    7) type="chore" ;;
+    8) type="perf" ;;
+    9) type="ci" ;;
+    *) echo "Opción inválida."; exit 1 ;;
+esac
+
+# Scope (opcional)
+read -p "Ingrese el scope (opcional, ej: login, api) y presione Enter: " scope
+[ -n "$scope" ] && scope="($scope)"
+
+# Asunto (obligatorio)
 while true; do
-
-    echo "¿Seleccione el tipo de commit que desea realizar?"
-    echo ""
-    echo "1. feat: Una nueva caracteristica?."
-    echo "2. fix: Se soluciono un bug."
-    echo "3. style: Se aplico formato, comas y puntos faltantes, etc; Sin cambios en el codigo?."
-    echo "4. refactor: Refactorizacion del codigo en produccion."
-    echo "5. test: Se añadieron pruebas, refactorizacion de pruebas; Sin cambios en el codigo."
-    echo ""
-    echo "Seleccione una opcion [1 - 5] :"
-    echo ""
-    read -p "Tipo de commit: " opcion
-
-    case $opcion in
-    "1")
-        type='feat'
-        ;;
-    "2")
-        type='fix'
-        ;;
-    "3")
-        type='style'
-        ;;
-    "4")
-        type='refactor'
-        ;;
-    "5")
-        type='test'
-        ;;
-    *) ;;
-    esac
-
-    echo ""
-
-    read -p "¿El tipo de commit selecionado es? :$type  S/N? " opcion
-
-    case $opcion in
-    [Ss]*)
-        echo "Confirmado. !"
+    read -p "Ingrese el asunto del commit (máx. 50 caracteres, sin punto final): " subject
+    if [ ${#subject} -le 50 ]; then
         break
-        ;;
-    [Nn]*)
-        echo "Elija nuevamente. !"
-        exit
-        ;;
-    *) echo "Seleccione Si o No." ;;
-    esac
-
+    else
+        echo "❗ El asunto debe tener 50 caracteres o menos."
+    fi
 done
 
-######################################################################################################################################################################################
-echo ""
-echo "Indique el asunto para el commit:
-Como sugerencia, el asunto no debe contener mas de 50 caracteres, debe iniciar con una letra mayuscula y no terminar con un punto. 
-Debemos ser imperativos al momento de redactar nuestro commit, es decir hay que ser objetivos y muy importante tenemos que acostumbrarnos a escribirlos en Ingles 
-esto es una de las mejores practicas que podemos tener en nuestros commits. "
-echo ""
-read -p "Asunto: " submit
+# Cuerpo (opcional)
+echo "Ingrese el cuerpo del commit (opcional, presione Enter para omitir):"
+read body
 
+# Footer (opcional)
+echo "Ingrese el footer (opcional, por ejemplo: Closes #123):"
+read footer
+
+# Construir mensaje
+commit_message="$type$scope: $subject"
+[ -n "$body" ] && commit_message+="
+
+$body"
+[ -n "$footer" ] && commit_message+="
+
+$footer"
+
+# Confirmar mensaje
 echo ""
-echo "Indique el cuerpo para el commit:
-Como sugerencia, no todos los commits son lo suficientemente complejos como para necesitar de un cuerpo, sin embargo es opcional y se usan en caso de que el commit requiera una explicacion y contexto.
-Utilizamos el cuerpo para explicar el ¿Que y Porque? de un commit y no el ¿Como? Al escribir el cuerpo, requerimos de una linea en blanco entre el titulo y el cuerpo, 
-ademas debemos limitar la longitud de cada linea a no mas de 72 caracteres. " body
-echo ""
+echo "📦 Commit que se va a ejecutar:"
+echo "--------------------------------------------------"
+echo "$commit_message"
+echo "--------------------------------------------------"
+read -p "¿Desea continuar? (s/n): " confirm
+[[ "$confirm" =~ ^[Ss]$ ]] || exit 0
 
-read -p "Cuerpo: " body
-
-echo "Indique el footer para el commit:
-Como sugerencia, el pie es opcional al igual que el cuerpo, pero este es usado para el seguimiento de los IDs con incidencias. " footer
-echo ""
-
-read -p "Footer: " footer
-
-# Carpeta donde esta configurado el repositorio
-cd /home/julian/codigosProgramacion
-git add *
-git commit -m "Type :$type" -m "Submit :$submit" -m "Body: $body" -m "Footer: $footer"
+# Ejecutar git
+git add .
+git commit -m "$commit_message"
 git push
-git log
+git log --oneline --graph --decorate -n 5
